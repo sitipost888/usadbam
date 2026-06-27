@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Усадьба Плавни — Место, где отдыхают душой</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Lora:ital,wght@1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Inter',sans-serif;
+  --editorial:'Lora',Georgia,serif;
+  --warm:#a4907c;
+  --warm-dark:#8e7a68;
+  --cream:#FAF9F5;
+  --sand:#F4F2EA;
+  --dark:#1e1714;
+}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--dark);color:#1c1917;overflow-x:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#d6d3d1;border-radius:3px}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:var(--sans)}
+a{text-decoration:none;color:inherit}
+
+/* NAVBAR */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:2rem 4rem;transition:all .5s}
+.logo-wrap{display:flex;align-items:center;gap:.75rem}
+.logo-img{width:3rem;height:3rem;border-radius:50%;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.logo-img img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.logo-name{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.95);font-weight:300}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:700px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--dark)}
+.hero-bg{position:absolute;inset:0}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.28);z-index:1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.9) saturate(1.1)}
+.hero-loc{position:absolute;top:7rem;left:4rem;z-index:3;text-align:left;pointer-events:none}
+.hero-loc span{display:block}
+.hero-loc .l1{font-size:11px;letter-spacing:.22em;color:#f5e6d3;text-transform:uppercase;font-weight:500}
+.hero-loc .l2{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.6);text-transform:uppercase;font-weight:300;margin-top:.25rem}
+.hero-content{position:relative;z-index:2;max-width:56rem;padding:0 1.5rem;margin-top:2rem;animation:fadeUp 1.4s cubic-bezier(.16,1,.3,1) .2s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero h1{font-family:var(--serif);color:#fff;font-size:5.5rem;line-height:.95;margin-bottom:2rem;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;font-weight:400;color:#f5e6d3}
+.hero-sub{color:rgba(255,255,255,.85);font-size:1.1rem;max-width:32rem;margin:0 auto 3rem;font-weight:300;line-height:1.6}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-glass{padding:.75rem 2rem;border-radius:9999px;font-size:10px;text-transform:uppercase;letter-spacing:.2em;font-weight:500;border:1px solid rgba(255,255,255,.2);color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(12px);transition:all .3s}
+.btn-glass:hover{background:rgba(255,255,255,.2);box-shadow:0 0 40px rgba(255,255,255,.15)}
+.btn-glass-outline{background:transparent}
+.btn-glass-outline:hover{background:rgba(255,255,255,.1)}
+
+/* IMPRESSION */
+.impression{background:var(--cream);padding:6rem 1.5rem;position:relative;overflow:hidden}
+.imp-glow{position:absolute;border-radius:50%;pointer-events:none}
+.imp-glow.tl{top:0;left:25%;width:24rem;height:24rem;background:#f1efe9;filter:blur(3rem);opacity:.6;transform:translateY(-50%)}
+.imp-glow.br{bottom:0;right:25%;width:24rem;height:24rem;background:#eceae3;filter:blur(3rem);opacity:.5;transform:translateY(50%)}
+.sec-inner{max-width:64rem;margin:0 auto;position:relative;z-index:1}
+.sec-inner-wide{max-width:88rem;margin:0 auto;position:relative;z-index:1}
+.title-center{text-align:center;margin-bottom:4rem}
+.h2-muted{font-family:var(--serif);font-size:3rem;color:#a8a29e;letter-spacing:-.02em}
+.imp-quote{max-width:48rem;margin:0 auto 4rem;text-align:center}
+.imp-quote p{font-family:var(--editorial);font-style:italic;font-size:1.1rem;color:#44403c;line-height:1.7;padding:0 2rem}
+.imp-divider{width:3rem;height:1px;background:#d6d3d1;margin:3rem auto 0}
+.imp-banner{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--cream)}
+.imp-img-wrap{position:relative;max-width:420px;border-radius:1rem;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.12)}
+.imp-img-wrap img{width:100%;height:auto;object-fit:cover;transition:transform 1s ease-out}
+.imp-img-wrap:hover img{transform:scale(1.03)}
+.imp-caption{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);color:#fff;font-family:monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;opacity:.85;background:rgba(0,0,0,.45);backdrop-filter:blur(4px);padding:.25rem .75rem;border-radius:9999px;border:1px solid rgba(255,255,255,.1);white-space:nowrap;z-index:2}
+.imp-text{max-width:40rem;margin:2rem auto 0;font-size:1rem;line-height:1.75;color:rgba(87,83,78,.95);padding-top:2rem;border-top:1px solid rgba(214,211,209,.4)}
+.imp-text p+p{margin-top:2rem}
+.imp-finale{margin-top:2.5rem;text-align:center;padding:1rem}
+.imp-finale p{font-family:var(--editorial);font-style:italic;font-size:1.2rem;color:#1c1917;line-height:1.6;font-weight:300}
+
+/* SCENARIOS */
+.scenarios{background:var(--sand);padding:6rem 1.5rem;position:relative;overflow:hidden;border-top:1px solid rgba(214,211,209,.5);border-bottom:1px solid rgba(214,211,209,.5)}
+.sec-header-row{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+.sec-header-row .left p{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.3em;color:var(--warm);margin-bottom:1rem}
+.sec-header-row .left h2{font-family:var(--serif);font-size:3.5rem;color:#292524;letter-spacing:-.02em}
+.nav-arrows{display:flex;gap:.75rem}
+.nav-arr{width:3rem;height:3rem;border-radius:50%;border:1px solid #e7e5e4;display:flex;align-items:center;justify-content:center;color:#57534e;background:transparent;transition:all .3s;font-size:1.1rem}
+.nav-arr:hover{color:#1c1917;background:#fafaf9;border-color:#d6d3d1}
+.h-scroll{display:flex;gap:1.5rem;overflow-x:auto;padding-bottom:2rem;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none}
+.h-scroll::-webkit-scrollbar{display:none}
+.scen-card{min-width:420px;max-width:420px;scroll-snap-align:start;background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:1.5rem;overflow:hidden;flex-shrink:0;box-shadow:0 8px 30px rgba(0,0,0,.015)}
+.scen-img{height:320px;overflow:hidden;position:relative}
+.scen-img-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,9,.4),transparent);z-index:1;opacity:.5}
+.scen-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease-out}
+.scen-card:hover .scen-img img{transform:scale(1.05)}
+.scen-num{position:absolute;top:1.5rem;left:1.5rem;z-index:2;width:2rem;height:2rem;border-radius:50%;background:var(--warm);color:#fff;font-family:monospace;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.scen-body{padding:2rem}
+.scen-body h3{font-family:var(--serif);font-size:1.4rem;color:#292524;margin-bottom:1rem;transition:color .3s}
+.scen-card:hover .scen-body h3{color:var(--warm)}
+.scen-body p{font-size:.85rem;color:#78716c;line-height:1.65;font-weight:300}
+.scroll-tip{text-align:center;color:#a8a29e;font-size:10px;font-family:monospace;letter-spacing:.1em;text-transform:uppercase;margin-top:1rem;display:none}
+
+/* SERVICES */
+.services{background:var(--cream);padding:6rem 1.5rem;position:relative}
+.territory-intro{text-align:center;max-width:40rem;margin:0 auto 3rem}
+.territory-intro h2{font-family:var(--serif);font-size:2.25rem;color:#292524}
+.terr-grid{display:grid;grid-template-columns:7fr 5fr;gap:2rem;align-items:center;background:#f5f5f4;border-radius:2rem;overflow:hidden;padding:1rem;border:1px solid rgba(231,229,228,.6);margin-bottom:6rem}
+.terr-img{height:400px;border-radius:1.5rem;overflow:hidden}
+.terr-img img{width:100%;height:100%;object-fit:cover;filter:saturate(1.1) brightness(.95)}
+.terr-text{padding:1.5rem 2rem}
+.eyebrow{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.3em;color:#a8a29e;display:block;margin-bottom:.5rem}
+.eyebrow-warm{color:var(--warm)!important}
+.terr-text .lead{font-family:var(--serif);font-size:1.3rem;color:#292524;line-height:1.6;margin-bottom:1.5rem;font-weight:300}
+.terr-divider{height:1px;background:#e7e5e4;margin:1.5rem 0}
+.terr-text .body{color:#57534e;font-size:.9rem;line-height:1.7;font-weight:300}
+.svc-header{text-align:center;max-width:40rem;margin:0 auto 4rem}
+.svc-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-bottom:6rem}
+.svc-card{background:#fff;border-radius:1.5rem;border:1px solid rgba(214,211,209,.4);padding:1.25rem;box-shadow:0 2px 8px rgba(0,0,0,.02);display:flex;flex-direction:column;justify-content:space-between;transition:all .3s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.06)}
+.svc-card-img{height:13rem;border-radius:1rem;overflow:hidden;margin-bottom:1.5rem;position:relative}
+.svc-card-img img{width:100%;height:100%;object-fit:cover}
+.svc-card h3{font-family:var(--serif);font-size:1.5rem;color:#292524;margin-bottom:.75rem}
+.svc-card .desc{font-size:.875rem;color:#57534e;line-height:1.6;margin-bottom:1rem;font-weight:300}
+.svc-card .quote{font-family:var(--editorial);font-style:italic;font-size:.8rem;color:rgba(120,113,108,.9);border-left:2px solid rgba(164,144,124,.3);padding:.25rem .75rem;margin-bottom:1.5rem}
+.svc-more{font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:var(--warm);background:transparent;border:none;transition:color .2s}
+.svc-more:hover{color:var(--warm-dark)}
+.silence{background:#f5f5f4;border:1px solid rgba(214,211,209,.6);border-radius:1.5rem;padding:2.5rem 3rem;display:flex;align-items:center;gap:1.5rem;position:relative;overflow:hidden}
+.silence-icon{width:3rem;height:3rem;border-radius:50%;background:#fff;border:1px solid #e7e5e4;display:flex;align-items:center;justify-content:center;color:var(--warm);flex-shrink:0}
+.silence-text h3{font-family:var(--serif);font-size:1.35rem;color:#292524;margin-bottom:.25rem}
+.silence-text p{font-size:.85rem;color:#78716c;font-weight:300;line-height:1.6}
+
+/* FOUNDER */
+.founder{background:var(--sand);padding:6rem 1.5rem;position:relative;overflow:hidden}
+.founder-inner{max-width:52rem;margin:0 auto;position:relative;z-index:1}
+.founder-inner h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em;line-height:1.1;margin-bottom:2rem}
+.founder-inner h2 em{font-style:italic;font-weight:400;color:var(--warm)}
+.founder-text{color:#57534e;font-size:.95rem;line-height:1.75;font-weight:300}
+.founder-text p+p{margin-top:1.5rem}
+.founder-sig{margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(214,211,209,.6);text-align:right}
+.founder-sig .name{font-family:var(--serif);font-size:1.1rem;color:#292524;font-weight:500}
+.founder-sig .role{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--warm);margin-top:.25rem}
+
+/* REVIEWS */
+.reviews{background:var(--cream);padding:6rem 1.5rem;position:relative;overflow:hidden}
+.rev-card{min-width:500px;max-width:500px;scroll-snap-align:start;background:#fff;border-radius:1.5rem;border:1px solid rgba(231,229,228,.6);padding:2rem;box-shadow:0 2px 8px rgba(0,0,0,.01);display:flex;flex-direction:column;justify-content:space-between}
+.rev-stars{display:flex;gap:.25rem;margin-bottom:1.25rem}
+.rev-star{color:#d4af37}
+.rev-text{font-size:.875rem;color:#57534e;line-height:1.65;margin-bottom:1.5rem;font-weight:300}
+.rev-footer{padding-top:1.25rem;border-top:1px solid #f5f5f4;display:flex;justify-content:space-between;align-items:center}
+.rev-author .name{font-family:var(--serif);font-size:1rem;font-weight:600;color:#292524;display:block}
+.rev-author .label{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--warm)}
+.rev-badge{font-size:9px;font-family:monospace;letter-spacing:.05em;color:#16a34a;background:#f0fdf4;padding:.25rem .75rem;border-radius:9999px;border:1px solid #bbf7d0;display:flex;align-items:center;gap:.35rem}
+.rev-badge::before{content:'';width:.35rem;height:.35rem;border-radius:50%;background:#22c55e;display:inline-block}
+
+/* CABINS */
+.cabins{background:var(--sand);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.6)}
+.cabins-header{text-align:center;max-width:48rem;margin:0 auto 3rem}
+.cabins-header h2{font-family:var(--serif);font-size:3.5rem;color:#292524;letter-spacing:-.02em;margin-bottom:1.5rem}
+.cabins-header p{font-size:.9rem;color:#78716c;font-weight:300;line-height:1.65}
+.cabins-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem}
+.cabin-card{background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:2rem;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 30px rgba(0,0,0,.015);transition:border-color .3s}
+.cabin-card:hover{border-color:#d6d3d1}
+.cabin-gallery{height:350px;position:relative;overflow:hidden;background:#f5f5f4}
+.cabin-gallery img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.cabin-card:hover .cabin-gallery img{transform:scale(1.02)}
+.cabin-gallery-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,9,.65),rgba(41,37,36,.1) 40%,transparent);pointer-events:none}
+.cabin-arr{position:absolute;top:50%;transform:translateY(-50%);width:2.25rem;height:2.25rem;border-radius:50%;background:rgba(0,0,0,.3);border:none;color:rgba(255,255,255,.9);display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:2;font-size:1rem}
+.cabin-arr:hover{background:rgba(0,0,0,.6)}
+.cabin-arr.l{left:1rem}
+.cabin-arr.r{right:1rem}
+.cabin-dots{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;gap:.375rem;z-index:2}
+.cabin-dot{width:.375rem;height:.375rem;border-radius:50%;background:rgba(255,255,255,.5);transition:all .3s}
+.cabin-dot.on{background:var(--warm);padding:0 .25rem;border-radius:.25rem}
+.cabin-badge{position:absolute;top:1.5rem;left:1.5rem;z-index:2;padding:.375rem .875rem;background:var(--warm);color:#fff;font-family:monospace;font-size:9px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;border-radius:9999px;display:flex;align-items:center;gap:.375rem}
+.cabin-body{padding:2rem}
+.cabin-body h3{font-family:var(--serif);font-size:1.75rem;color:#292524;margin-bottom:.75rem;transition:color .3s}
+.cabin-card:hover .cabin-body h3{color:var(--warm)}
+.cabin-body .desc{font-size:.875rem;color:#78716c;line-height:1.65;margin-bottom:1.5rem;font-weight:300}
+.cabin-feats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.cabin-feat{display:flex;align-items:center;gap:.5rem;font-size:11px;color:#57534e;font-weight:300}
+.cabin-feat svg{color:var(--warm);flex-shrink:0}
+.cabin-footer{padding:2rem;border-top:1px solid #f5f5f4}
+.cabin-price-row{display:flex;justify-content:space-between;padding:1.5rem 0}
+.price-label{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:#a8a29e;margin-bottom:.25rem}
+.price-nums{display:flex;align-items:baseline;flex-wrap:wrap;gap:.5rem}
+.price-nums .amt{font-family:var(--serif);font-size:1.5rem;color:#292524}
+.price-nums .per{font-size:.75rem;color:#a8a29e;font-weight:300}
+.price-disc{font-family:var(--editorial);font-style:italic;font-size:11px;color:var(--warm);margin-top:.5rem}
+.cabin-btns{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.btn-outline{width:100%;padding:.75rem;border:1px solid #e7e5e4;color:#57534e;font-size:10px;text-transform:uppercase;letter-spacing:.2em;font-weight:500;border-radius:9999px;background:transparent;transition:all .3s}
+.btn-outline:hover{border-color:#a8a29e;color:var(--warm);background:#fafaf9}
+.btn-fill{width:100%;padding:.75rem;background:var(--warm);color:#fff;font-size:10px;text-transform:uppercase;letter-spacing:.2em;font-weight:600;border-radius:9999px;border:none;transition:all .3s;box-shadow:0 4px 12px rgba(164,144,124,.3)}
+.btn-fill:hover{background:var(--warm-dark)}
+
+/* BOOKING */
+.booking{background:var(--cream);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.4)}
+.booking-header{text-align:center;max-width:40rem;margin:0 auto 3rem}
+.booking-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em;margin-bottom:.75rem}
+.booking-header p{font-size:.875rem;color:#78716c;font-weight:300;line-height:1.6}
+.booking-grid{display:grid;grid-template-columns:7fr 5fr;gap:2.5rem;align-items:start;margin-bottom:5rem}
+.form-panel{background:#fff;border-radius:2rem;padding:2.5rem;border:1px solid rgba(214,211,209,.8);box-shadow:0 4px 20px rgba(0,0,0,.04)}
+.form-panel h3{font-family:var(--serif);font-size:1.5rem;color:#292524;margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem;color:#a4907c}
+.form-panel h3 span{color:#292524}
+.form-label{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e;display:block;margin-bottom:.5rem;font-weight:600}
+.cabin-sel-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.cabin-opt{padding:1rem;border-radius:.75rem;border:1px solid #e7e5e4;text-align:left;background:transparent;width:100%;transition:all .2s}
+.cabin-opt:hover{border-color:#a8a29e}
+.cabin-opt.sel{border-color:#1c1917;background:#fafaf9}
+.cabin-opt .cn{font-family:var(--serif);font-size:1rem;font-weight:500;color:#292524;display:block}
+.cabin-opt .cc{font-size:.75rem;color:#78716c;font-weight:300;display:block;margin-top:.25rem}
+.dates-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.inp-wrap{position:relative}
+.inp-wrap svg{position:absolute;left:.875rem;top:50%;transform:translateY(-50%);color:#a8a29e;pointer-events:none}
+.inp{width:100%;padding:.75rem 1rem .75rem 2.75rem;background:#fafaf9;border:1px solid #e7e5e4;border-radius:.75rem;color:#57534e;font-size:.875rem;outline:none;font-family:var(--sans);transition:border-color .2s}
+.inp:focus{border-color:#78716c}
+.inp-plain{width:100%;padding:.75rem 1rem;background:#fafaf9;border:1px solid #e7e5e4;border-radius:.75rem;color:#57534e;font-size:.875rem;outline:none;font-family:var(--sans);transition:border-color .2s}
+.inp-plain:focus{border-color:#78716c}
+.contact-sec{border-top:1px solid #f5f5f4;padding-top:1.5rem;margin-top:1.5rem}
+.contact-sec h4{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e;font-weight:700;margin-bottom:1rem}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem}
+.btn-submit{width:100%;padding:1rem;background:#1c1917;color:var(--cream);font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:600;border:none;border-radius:.75rem;transition:background .3s}
+.btn-submit:hover{background:#292524}
+.form-note{margin-top:.75rem;padding:.75rem;background:#fafaf9;border-radius:.5rem;border:1px solid #f5f5f4;text-align:center}
+.form-note p{font-size:11px;color:#a8a29e;font-weight:300}
+.summary{background:#1c1917;color:var(--cream);border-radius:2rem;padding:2rem;border:1px solid rgba(255,255,255,.05);box-shadow:0 20px 60px rgba(0,0,0,.15)}
+.summary .sum-label{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:.2em;color:#f5e6d3;display:block;margin-bottom:.5rem}
+.summary h3{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.sum-row{display:flex;justify-content:space-between;font-size:.875rem;color:rgba(255,255,255,.8);margin-bottom:1rem}
+.sum-row .v{font-weight:500;color:#fff}
+.sum-div{height:1px;background:rgba(255,255,255,.1);margin:1rem 0}
+.sum-sub{font-size:.75rem;color:rgba(255,255,255,.6)}
+.sum-sub .r{display:flex;justify-content:space-between;margin-bottom:.5rem}
+.sum-sub .disc{color:#34d399;font-weight:500}
+.sum-total{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1)}
+.sum-total .lbl{font-size:11px;color:rgba(255,255,255,.5);font-family:monospace;text-transform:uppercase;letter-spacing:.15em}
+.sum-total .amt{font-family:var(--serif);font-size:2rem;color:#f5e6d3;font-weight:700}
+.sum-gift{margin-top:1rem;padding:.75rem;background:rgba(255,255,255,.05);border-radius:.75rem;border:1px solid rgba(255,255,255,.05);display:flex;align-items:flex-start;gap:.625rem}
+.sum-gift .gt{font-weight:500;color:#fff;font-size:.8rem;display:block}
+.sum-gift .gd{font-size:10px;color:rgba(255,255,255,.7);font-weight:300;line-height:1.5}
+.plaques{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.plaque-warm{background:#8e7a68;color:#fff;border-radius:1.5rem;padding:2rem;border:1px solid rgba(164,144,124,.45);min-height:180px;background-image:radial-gradient(circle at top right,rgba(255,255,255,.12),transparent 70%)}
+.plaque-warm .e{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:.2em;color:#f5e6d3;display:block;margin-bottom:.5rem;font-weight:600}
+.plaque-warm h4{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:.625rem}
+.plaque-warm p{font-size:.875rem;color:rgba(245,230,211,.85);font-weight:300;line-height:1.6}
+.plaque-white{background:#fff;border-radius:1.5rem;padding:2rem;border:1px solid rgba(214,211,209,.8);min-height:180px}
+.plaque-white .e{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:.2em;color:#a8a29e;display:block;margin-bottom:.5rem;font-weight:600}
+.plaque-white h4{font-family:var(--serif);font-size:1.5rem;color:#292524;margin-bottom:.625rem}
+.plaque-white p{font-size:.875rem;color:#57534e;font-weight:300;line-height:1.6}
+.booking-success{display:none;padding:3rem;text-align:center}
+.booking-success.show{display:block}
+.succ-icon{width:4rem;height:4rem;background:#ecfdf5;color:#16a34a;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;border:1px solid #bbf7d0;font-size:1.5rem}
+.booking-success h4{font-family:var(--serif);font-size:1.5rem;color:#292524;margin-bottom:.75rem}
+.booking-success p{font-size:.875rem;color:#57534e;font-weight:300;line-height:1.6;max-width:28rem;margin:0 auto 1.5rem}
+.btn-try{padding:.625rem 1.5rem;background:#f5f5f4;color:#57534e;font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;border:none;border-radius:9999px;transition:background .2s}
+.btn-try:hover{background:#e7e5e4}
+
+/* CARE */
+.care{background:var(--sand);padding:6rem 1.5rem}
+.care-header{text-align:center;max-width:40rem;margin:0 auto 4rem}
+.care-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em;margin-bottom:.75rem}
+.care-header p{font-size:.875rem;color:#78716c;font-weight:300;line-height:1.6}
+.care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.care-card{background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:1.5rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.01)}
+.care-card:hover{transform:translateY(-5px);border-color:rgba(164,144,124,.4)}
+.care-icon{width:3rem;height:3rem;border-radius:.875rem;background:#fafaf9;border:1px solid #e7e5e4;display:flex;align-items:center;justify-content:center;color:var(--warm);margin-bottom:1rem;transition:all .3s}
+.care-card:hover .care-icon{background:#1c1917;color:#fff}
+.care-card h3{font-family:var(--serif);font-size:1.15rem;color:#292524;margin-bottom:.75rem;transition:color .3s}
+.care-card:hover h3{color:var(--warm)}
+.care-card p{font-size:.8rem;color:#78716c;line-height:1.6;font-weight:300}
+.care-foot{margin-top:1.5rem;padding-top:1rem;border-top:1px solid #f5f5f4;display:flex;justify-content:space-between;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:#a8a29e}
+.care-foot .inc{color:var(--warm);font-weight:500;opacity:0;transition:opacity .3s}
+.care-card:hover .inc{opacity:1}
+
+/* TOURS */
+.tours{background:var(--cream);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.4)}
+.tours-header{text-align:center;max-width:48rem;margin:0 auto 3rem}
+.tours-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em;margin-bottom:.75rem}
+.tours-header p{font-size:.875rem;color:#78716c;font-weight:300;line-height:1.6}
+.tour-card{max-width:28rem;margin:0 auto;background:#fff;border-radius:2rem;border:1px solid rgba(231,229,228,.6);overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.02);transition:box-shadow .3s}
+.tour-card:hover{box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.tour-img{height:240px;position:relative;overflow:hidden;background:#f5f5f4}
+.tour-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.tour-card:hover .tour-img img{transform:scale(1.03)}
+.tour-img-ov{position:absolute;inset:0;background:rgba(28,25,23,.2)}
+.tour-badge{position:absolute;bottom:1rem;left:1rem;background:rgba(250,249,245,.9);backdrop-filter:blur(8px);padding:.375rem .75rem;border-radius:9999px;border:1px solid #e7e5e4;display:flex;align-items:center;gap:.375rem;font-size:10px;font-family:monospace;text-transform:uppercase;color:#44403c;font-weight:700;letter-spacing:.05em}
+.tour-body{padding:1.5rem 2rem}
+.tour-body h3{font-family:var(--serif);font-size:1.35rem;color:#292524;margin-bottom:1rem;transition:color .3s}
+.tour-card:hover .tour-body h3{color:var(--warm)}
+.tour-body p{font-size:.875rem;color:#57534e;font-weight:300;line-height:1.6;margin-bottom:1.5rem}
+.tour-footer{padding-top:1.25rem;border-top:1px solid #f5f5f4;display:flex;justify-content:space-between;align-items:center}
+.tour-loc{display:flex;align-items:center;gap:.5rem;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:#a8a29e}
+.tour-link{width:2rem;height:2rem;border-radius:50%;background:#f5f5f4;color:#1c1917;display:flex;align-items:center;justify-content:center;border:none;transition:all .3s;font-size:.8rem}
+.tour-link:hover{background:var(--warm);color:#fff}
+
+/* PRICELIST */
+.pricelist{background:var(--cream);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.4)}
+.price-box{max-width:48rem;margin:0 auto;background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:2.25rem;padding:3.5rem;text-align:center;box-shadow:0 8px 30px rgba(0,0,0,.015);position:relative;overflow:hidden}
+.price-icon{width:3.5rem;height:3.5rem;background:#fafaf9;border:1px solid #e7e5e4;border-radius:.875rem;display:flex;align-items:center;justify-content:center;color:var(--warm);margin:0 auto 1.5rem}
+.price-box h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em;margin-bottom:1rem}
+.price-box p{font-size:.9rem;color:#78716c;font-weight:300;max-width:28rem;margin:0 auto 2.5rem;line-height:1.6}
+.btn-dark{padding:1rem 2rem;background:#1c1917;color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.2em;font-weight:700;border:none;border-radius:9999px;transition:background .3s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-dark:hover{background:#292524}
+
+/* FAQ */
+.faq{background:var(--cream);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.4)}
+.faq-inner{max-width:48rem;margin:0 auto}
+.faq-header{text-align:center;max-width:40rem;margin:0 auto 4rem}
+.faq-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em}
+.faq-list{display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:1rem;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.01)}
+.faq-trigger{width:100%;text-align:left;padding:2rem;background:transparent;border:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:var(--serif);font-size:1.1rem;color:#292524;transition:color .2s}
+.faq-trigger:hover{color:var(--warm)}
+.faq-ind{width:2rem;height:2rem;border-radius:50%;border:1px solid #e7e5e4;background:#fafaf9;color:#78716c;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s;font-size:1.1rem}
+.faq-ind.open{background:#1c1917;color:#fff;border-color:#1c1917}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-answer.open{max-height:500px}
+.faq-answer-inner{padding:0 2rem 2rem;border-top:1px solid rgba(245,245,244,.5);padding-top:1.25rem;font-size:.875rem;color:#57534e;line-height:1.65;font-weight:300}
+.faq-help{margin-top:3.5rem;padding:1.5rem;background:#fff;border-radius:.875rem;border:1px solid rgba(231,229,228,.6);text-align:center;display:flex;align-items:center;justify-content:center;gap:.75rem;box-shadow:0 2px 8px rgba(0,0,0,.01)}
+.faq-help p{font-size:.875rem;color:#57534e;font-weight:300}
+.faq-help a{font-weight:600;color:#1c1917;cursor:pointer}
+.faq-help a:hover{text-decoration:underline}
+
+/* MAP */
+.map-sec{background:var(--cream);padding:3rem 1.5rem;border-top:1px solid rgba(214,211,209,.4);position:relative;overflow:hidden}
+.map-header{text-align:center;max-width:40rem;margin:0 auto 4rem}
+.map-header h2{font-family:var(--serif);font-size:3rem;color:#292524;letter-spacing:-.02em}
+.map-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem}
+.map-card{background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:2rem;padding:2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:450px;box-shadow:0 8px 30px rgba(0,0,0,.015)}
+.map-card .ce{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--warm);display:block;margin-bottom:.5rem}
+.map-card h3{font-family:var(--serif);font-size:1.75rem;color:#292524;margin-bottom:1rem}
+.map-card p{font-size:.875rem;color:#78716c;font-weight:300;line-height:1.6;margin-bottom:1.5rem}
+.map-frame{height:14rem;border-radius:1rem;overflow:hidden;border:1px solid rgba(214,211,209,.4);background:#f5f5f4;flex-shrink:0}
+.map-frame iframe{width:100%;height:100%;border:none}
+.tour-player{height:14rem;border-radius:1rem;overflow:hidden;background:#1c1917;flex-shrink:0;position:relative}
+.tour-prev{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;cursor:pointer}
+.tour-prev-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.5);transition:transform .75s}
+.tour-prev:hover .tour-prev-bg{transform:scale(1.05)}
+.tour-play{width:4rem;height:4rem;border-radius:50%;background:var(--warm);color:#fff;display:flex;align-items:center;justify-content:center;border:none;z-index:1;transition:all .3s;font-size:1.5rem}
+.tour-play:hover{background:#1c1917;transform:scale(1.1)}
+.tour-play-lbl{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:rgba(250,249,245,.9);z-index:1}
+.map-badge{display:flex;align-items:center;gap:.5rem;padding:.375rem .875rem;background:#fafaf9;border:1px solid #e7e5e4;border-radius:9999px;font-size:10px;font-family:monospace;text-transform:uppercase;color:var(--warm);align-self:flex-start}
+.dir-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:6rem}
+.dir-card{background:#fff;border:1px solid rgba(231,229,228,.6);border-radius:1rem;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,.01)}
+.dir-card .de{font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--warm);display:block;margin-bottom:.5rem}
+.dir-card .dt{font-size:.875rem;color:#292524;font-weight:500;margin-bottom:.375rem}
+.dir-card .dd{font-size:.75rem;color:#78716c;font-weight:300;line-height:1.6}
+.map-finale{text-align:center;max-width:48rem;margin:0 auto;padding-top:4rem;border-top:1px solid rgba(214,211,209,.6)}
+.map-finale p{font-family:var(--editorial);font-style:italic;font-size:3rem;color:var(--warm);line-height:1.4;letter-spacing:.02em;font-weight:300;margin-bottom:2rem}
+.btn-warm{padding:1rem 2rem;background:var(--warm);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.25em;font-weight:700;border:none;border-radius:9999px;transition:all .3s;box-shadow:0 4px 12px rgba(164,144,124,.3)}
+.btn-warm:hover{background:var(--warm-dark)}
+
+/* FOOTER */
+footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem;border-top:1px solid #e7e5e4}
+.footer-inner{max-width:88rem;margin:0 auto;display:flex;flex-direction:column;gap:3rem}
+.footer-top{display:grid;grid-template-columns:5fr 4fr 3fr;gap:2rem;align-items:start}
+.footer-brand .bn{font-family:var(--serif);color:#292524;font-size:1.1rem;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem}
+.footer-brand p{font-size:11px;line-height:1.65;max-width:22rem;color:#a8a29e}
+.footer-sec-ttl{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:#292524;font-weight:600;margin-bottom:.75rem;display:block}
+.footer-contact{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem;color:#57534e;transition:color .2s}
+.footer-contact:hover{color:#1c1917}
+.footer-contact svg{color:var(--warm);flex-shrink:0}
+.footer-social{display:flex;align-items:center;gap:.625rem;margin-bottom:.625rem;color:#57534e;transition:color .2s}
+.footer-social:hover{color:#1c1917}
+.footer-soc-icon{width:1.5rem;height:1.5rem;border-radius:50%;background:#fff;border:1px solid #e7e5e4;display:flex;align-items:center;justify-content:center;color:var(--warm);flex-shrink:0}
+.footer-div{height:1px;background:rgba(214,211,209,.6);width:100%}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.footer-copy p{font-size:10px;color:#a8a29e;font-family:monospace;line-height:1.5}
+.footer-right{display:flex;align-items:center;gap:1.5rem}
+.btn-privacy{font-size:11px;color:#78716c;display:flex;align-items:center;gap:.375rem;transition:color .2s;background:transparent;border:none}
+.btn-privacy:hover{color:#1c1917}
+.btn-privacy svg{color:var(--warm)}
+.btn-top{width:2rem;height:2rem;border-radius:50%;border:1px solid #e7e5e4;background:transparent;color:#57534e;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:.8rem}
+.btn-top:hover{border-color:#a8a29e;background:#f5f5f4}
+
+/* MODALS */
+.modal{position:fixed;inset:0;background:rgba(12,10,9,.6);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
+.modal.open{display:flex}
+.modal-box{background:var(--cream);border-radius:2rem;overflow:hidden;border:1px solid #e7e5e4;z-index:101;width:100%;max-width:36rem;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.25);margin:2rem auto}
+.modal-close{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(28,25,23,.5);color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s;font-size:1rem}
+.modal-close:hover{background:#1c1917}
+.modal-cover{height:14rem;position:relative}
+.modal-cover img{width:100%;height:100%;object-fit:cover}
+.modal-cover-grad{position:absolute;inset:0;background:linear-gradient(to top,#1c1917,transparent)}
+.modal-cover-title{position:absolute;bottom:1.5rem;left:1.5rem;font-family:var(--serif);font-size:1.75rem;color:#fff}
+.modal-content{padding:2rem;max-height:55vh;overflow-y:auto}
+.modal-content p{font-size:.875rem;color:#44403c;line-height:1.7;margin-bottom:1.5rem}
+.modal-sec-lbl{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.15em;color:var(--warm);margin-bottom:.75rem;display:flex;align-items:center;gap:.375rem;font-weight:700}
+.modal-specs{list-style:none;display:flex;flex-direction:column;gap:.625rem}
+.modal-spec{display:flex;align-items:flex-start;gap:.625rem;font-size:.875rem;color:#57534e;font-weight:300}
+.spec-dot{width:.375rem;height:.375rem;border-radius:50%;background:var(--warm);margin-top:.45rem;flex-shrink:0}
+.modal-footer{padding:1.5rem 2rem;border-top:1px solid #e7e5e4;display:flex;justify-content:flex-end}
+.btn-modal{padding:.625rem 1.5rem;background:#1c1917;color:#fff;font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-weight:600;border:none;border-radius:9999px;transition:background .2s}
+.btn-modal:hover{background:#292524}
+
+/* CABIN MODAL */
+.cabin-modal-box{max-width:42rem}
+.cabin-modal-content{padding:2rem;max-height:60vh;overflow-y:auto}
+.cabin-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.5rem}
+.cabin-feat-item{display:flex;align-items:flex-start;gap:.625rem;font-size:.875rem;color:#44403c;font-weight:300}
+.kitchen-box{background:#fafaf9;border:1px solid rgba(231,229,228,.6);border-radius:.875rem;padding:1.25rem 1.5rem}
+.kitchen-head{display:flex;align-items:center;gap:.75rem;color:var(--warm);margin-bottom:.75rem;font-family:var(--serif);font-size:1.1rem;color:#292524}
+.kitchen-box p{font-size:.8rem;color:#78716c;font-weight:300;line-height:1.6}
+.cabin-modal-footer{padding:1.5rem 2rem;border-top:1px solid rgba(231,229,228,.6);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.cabin-modal-footer .offer{font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:#a8a29e}
+.cabin-modal-footer .offer em{font-style:italic;font-family:var(--editorial);font-size:.875rem;color:var(--warm);display:block;text-transform:none;letter-spacing:0}
+.cabin-modal-btns{display:flex;gap:.75rem}
+.btn-cancel{padding:.75rem 1.25rem;border:1px solid #e7e5e4;color:#57534e;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;border-radius:9999px;background:transparent;transition:all .2s}
+.btn-cancel:hover{background:#fafaf9;color:#1c1917}
+.btn-book{padding:.75rem 1.5rem;background:var(--warm);color:#fff;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:700;border:none;border-radius:9999px;transition:all .3s;display:flex;align-items:center;gap:.375rem}
+.btn-book:hover{background:#1c1917}
+
+/* PRICE MODAL */
+.price-modal-box{max-width:48rem;background:#fff}
+.price-modal-hdr{padding:2rem}
+.price-modal-wrap{padding:0 2rem;overflow-x:auto;max-height:50vh}
+.price-tbl{width:100%;border-collapse:collapse;min-width:400px}
+.price-tbl thead tr{border-bottom:1px solid #e7e5e4}
+.price-tbl thead th{padding:1rem 0;font-size:10px;font-family:monospace;text-transform:uppercase;letter-spacing:.1em;color:var(--warm);font-weight:600}
+.price-tbl thead th:not(:first-child){text-align:right}
+.price-tbl tbody tr{border-bottom:1px solid #f5f5f4;transition:background .15s}
+.price-tbl tbody tr:hover{background:#fafaf9}
+.price-tbl td{padding:1rem .5rem;font-size:.875rem;font-weight:300;color:#57534e}
+.price-tbl td:first-child{font-family:var(--serif);color:#292524;font-weight:400}
+.price-tbl td:nth-child(2){text-align:right;color:var(--warm);font-weight:500;white-space:nowrap}
+.price-tbl td:nth-child(3){text-align:right;font-size:.75rem;color:#a8a29e;font-style:italic}
+.price-modal-foot{padding:1.5rem 2rem;background:#fafaf9;border-top:1px solid #f5f5f4;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.price-modal-note{display:flex;align-items:center;gap:.5rem;font-size:.75rem;color:var(--warm);font-weight:500}
+
+@keyframes panorama{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* Responsive */
+@media(max-width:1024px){
+  .terr-grid{grid-template-columns:1fr}
+  .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .cabins-grid{grid-template-columns:1fr}
+  .booking-grid{grid-template-columns:1fr}
+  .care-grid{grid-template-columns:repeat(2,1fr)}
+  .map-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr}
+  .plaques{grid-template-columns:1fr}
+  .dir-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .navbar{padding:1.5rem 1.5rem}
+  .hero h1{font-size:3.2rem}
+  .hero-loc{left:1.5rem;top:5.5rem}
+  .sec-header-row{flex-direction:column;align-items:flex-start;gap:1.5rem}
+  .sec-header-row .left h2{font-size:2.5rem}
+  .scen-card{min-width:290px;max-width:290px}
+  .scen-img{height:240px}
+  .svc-grid{grid-template-columns:1fr}
+  .rev-card{min-width:290px;max-width:100%}
+  .care-grid{grid-template-columns:1fr}
+  .plaques{grid-template-columns:1fr}
+  .cabin-btns{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .dates-grid{grid-template-columns:1fr}
+  .cabin-sel-grid{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .dir-grid{grid-template-columns:1fr}
+  .scroll-tip{display:block}
+  .h2-muted{font-size:2.2rem}
+  .map-finale p{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo-wrap">
+    <div class="logo-img"><img src="https://i.ibb.co/PvrNWNp7/IMG-8905.png" alt="Усадьба Плавни"></div>
+    <span class="logo-name">Усадьба Плавни</span>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-overlay"></div>
+    <img src="https://i.ibb.co/BhnBz7V/IMG-8904.png" alt="Усадьба Плавни">
+  </div>
+  <div class="hero-loc">
+    <span class="l1">Карачаево-Черкессия,</span>
+    <span class="l2">в часе езды от Архыза</span>
+  </div>
+  <div class="hero-content">
+    <h1>Место, где<br><em>отдыхают</em><br>душой</h1>
+    <p class="hero-sub">Приезжайте за тишиной, уютом <br>и вечерами у костра</p>
+    <div class="hero-btns">
+      <button class="btn-glass" onclick="goto('booking')">Забронировать домик</button>
+      <button class="btn-glass btn-glass-outline" onclick="goto('impression')">Ощутить атмосферу</button>
+    </div>
+  </div>
+</section>
+
+<section class="impression" id="impression">
+  <div class="imp-glow tl"></div>
+  <div class="imp-glow br"></div>
+  <div class="sec-inner">
+    <div class="title-center"><h2 class="h2-muted">Первое впечатление</h2></div>
+    <div class="imp-quote">
+      <p>«Представьте: вы собрали вещи, настроились и едете с близкими на отдых. Расслабиться, отдохнуть, побыть вместе. Вся суета, все дела остаются в городе. Эти дни — только для вас».</p>
+      <div class="imp-divider"></div>
+    </div>
+    <div class="imp-banner">
+      <div class="imp-img-wrap">
+        <img src="https://i.ibb.co/5h1RPcQn/IMG-8801.png" alt="Дорога в Усадьбу">
+        <span class="imp-caption">дорога к усадьбе плавни</span>
+      </div>
+    </div>
+    <div class="imp-text">
+      <p>Вы сворачиваете с трассы на лесную дорогу. Суета города остаётся позади.</p>
+      <p>И вот вы подъезжаете к Усадьбе. Ещё не выйдя из машины, опускаете стекло — и слышите тишину. Настоящую. Такую, которая сначала непривычна, а потом — не хочешь, чтобы она заканчивалась. Вдыхаете целебный лесной воздух. И понимаете: вы там, где должны быть.</p>
+      <p>Закрываете дверь машины — и словно оставляете за ней всё: дела, звонки, бесконечный список задач. Перед вами — дорога к домику, на горизонте — гора и озеро. Вы идёте не спеша. Вдыхаете запах леса.</p>
+      <p>Вас встречает радушная хозяйка. Провожает в ваш домик. Вы переступаете порог — и сразу ощущаете: здесь вы сможете отдохнуть по-настоящему. С комфортом. С удовольствием от каждого мгновения.</p>
+      <p>Вы никуда не спешите. Только вы, ваши близкие, любимые рядом. И всё время — ваше. Никаких дел. Никаких забот. Только отдых.</p>
+      <p>Вечером вы сидите у костра. Рядом — ваши близкие. А утром вы проснётесь в тишине, а не под будильник. И это будет лучшее утро за долгое время.</p>
+      <p>Вот вы уже по-настоящему отдохнули. А впереди — ещё день. Или даже несколько. Время принадлежит только вам. Отдых, где всё — для вас.</p>
+      <div class="imp-finale"><p>Это не сказка. Это Усадьба Плавни.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="scenarios" id="scenarios">
+  <div class="sec-inner-wide">
+    <div class="sec-header-row">
+      <div class="left">
+        <p>Идеальный день в Усадьбе</p>
+        <h2>Сценарии вашего отдыха</h2>
+      </div>
+      <div class="nav-arrows">
+        <button class="nav-arr" onclick="hs('ss',-400)">&#8592;</button>
+        <button class="nav-arr" onclick="hs('ss',400)">&#8594;</button>
+      </div>
+    </div>
+    <div class="h-scroll" id="ss"></div>
+    <p class="scroll-tip">← Листайте вправо или влево →</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="sec-inner-wide">
+    <div class="territory-intro">
+      <span class="eyebrow">О нашей усадьбе</span>
+      <h2>Естественная красота природы и продуманный комфорт</h2>
+    </div>
+    <div class="terr-grid">
+      <div class="terr-img"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80" alt="Территория Усадьбы Плавни" loading="lazy"></div>
+      <div class="terr-text">
+        <span class="eyebrow eyebrow-warm">Территория</span>
+        <p class="lead">Уютная база отдыха в живописном месте. Вокруг — вековой лес и чистейший воздух.</p>
+        <div class="terr-divider"></div>
+        <p class="body">Рядом — зеркальный пруд, величественный вид на горы и река Зеленчук. Ухоженная территория гармонично озеленена молодыми хвойными саженцами, создающими неповторимый аромат загородного покоя.</p>
+      </div>
+    </div>
+    <div class="svc-header">
+      <span class="eyebrow">Наши услуги</span>
+      <h2>Услуги для души и тела</h2>
+    </div>
+    <div class="svc-grid" id="svc-grid"></div>
+    <div class="silence">
+      <div class="silence-icon">⚠</div>
+      <div class="silence-text">
+        <h3>Тишина и покой</h3>
+        <p>Громкая музыка и шумные вечеринки у нас категорически запрещены. Мы оберегаем тихий загородный покой каждого нашего гостя.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="founder" id="manifesto">
+  <div class="founder-inner">
+    <span class="eyebrow eyebrow-warm">Основатель Усадьбы</span>
+    <h2>Манифест <br><em>загородного тепла</em></h2>
+    <div class="founder-text">
+      <p>«Это место родилось из простого желания — дать своей семье тишину, уединение и возможность спокойно проводить время вместе. А потом я понял: это нужно не только моей семье.</p>
+      <p>Многое здесь сделано вручную — детали, которые вы обязательно заметите при заезде, я придумал и смастерил сам. Так я хотел передать тепло, которое нельзя купить за деньги, его можно только почувствовать сердцем, находясь здесь.</p>
+      <p>Мне хотелось, чтобы в Усадьбе Плавни гармонично сочетались уединение на дикой природе и бескомпромиссный комфорт, к которому вы привыкли в повседневной жизни.</p>
+      <p>Каждого нашего гостя я стремлюсь встретить лично. Мне искренне важно, чтобы вы уехали отсюда по-настоящему отдохнувшими и с новыми силами. Репутация для меня — это когда люди искренне советуют это место своим самым близким».</p>
+    </div>
+    <div class="founder-sig">
+      <p class="name">Александр</p>
+      <p class="role">Основатель Усадьбы Плавни</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="sec-inner-wide">
+    <div class="sec-header-row">
+      <div class="left">
+        <span class="eyebrow">Отзывы гостей</span>
+        <h2>Слова благодарности</h2>
+      </div>
+      <div class="nav-arrows">
+        <button class="nav-arr" onclick="hs('rs',-500)">&#8592;</button>
+        <button class="nav-arr" onclick="hs('rs',500)">&#8594;</button>
+      </div>
+    </div>
+    <div class="h-scroll" id="rs"></div>
+    <p class="scroll-tip">← Проведите пальцем →</p>
+  </div>
+</section>
+
+<section class="cabins" id="cabins">
+  <div class="sec-inner-wide">
+    <div class="cabins-header">
+      <h2>Выберите ваш домик</h2>
+      <p>Посмотрите наши домики и выберите тот, который вам по душе. Каждый из них окружен кавказским теплом и оснащен всем необходимым для комфортной жизни.</p>
+    </div>
+    <div class="cabins-grid" id="cabins-grid"></div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="sec-inner-wide">
+    <div class="booking-header">
+      <span class="eyebrow">Онлайн Бронирование</span>
+      <h2>Запланируйте ваш отдых</h2>
+      <p>Выберите даты и домик. Наша система мгновенно рассчитает стоимость проживания с учетом всех персональных скидок.</p>
+    </div>
+    <div class="booking-grid">
+      <div class="form-panel">
+        <h3>✦ <span>Параметры проживания</span></h3>
+        <div id="form-wrap">
+          <div style="margin-bottom:1.5rem">
+            <label class="form-label">Выберите домик:</label>
+            <div class="cabin-sel-grid" id="cabin-sel"></div>
+          </div>
+          <div class="dates-grid" style="margin-bottom:1.5rem">
+            <div>
+              <label class="form-label">Дата заезда:</label>
+              <div class="inp-wrap">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <input type="date" class="inp" id="ci" value="2026-06-25" oninput="upd()">
+              </div>
+            </div>
+            <div>
+              <label class="form-label">Дата выезда:</label>
+              <div class="inp-wrap">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <input type="date" class="inp" id="co" value="2026-06-28" oninput="upd()">
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:1.5rem">
+            <label class="form-label">Количество гостей:</label>
+            <div class="inp-wrap">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <select class="inp" id="gs" oninput="upd()">
+                <option value="1">1 гость</option>
+                <option value="2" selected>2 гостя</option>
+                <option value="3">3 гостя</option>
+                <option value="4">4 гостя</option>
+              </select>
+            </div>
+          </div>
+          <div class="contact-sec">
+            <h4>Контактные данные для связи</h4>
+            <div class="contact-grid">
+              <input type="text" class="inp-plain" id="gname" placeholder="Ваше имя">
+              <input type="tel" class="inp-plain" id="gphone" placeholder="Номер телефона">
+            </div>
+            <button class="btn-submit" onclick="sub()">Отправить запрос на бронирование</button>
+            <div class="form-note" style="margin-top:.75rem"><p>* Готовы интегрировать ваш TravelLine / Bnovo / Яндекс widget. Предоставьте iframe код при финальной сдаче.</p></div>
+          </div>
+        </div>
+        <div class="booking-success" id="bsucc">
+          <div class="succ-icon">✓</div>
+          <h4>Запрос успешно отправлен!</h4>
+          <p id="succ-txt">Спасибо! Наш администратор свяжется с вами в течение 10 минут.</p>
+          <button class="btn-try" onclick="rst()">Забронировать еще раз</button>
+        </div>
+      </div>
+      <div class="summary">
+        <span class="sum-label">Ваш расчет:</span>
+        <h3>Детали брони</h3>
+        <div class="sum-row"><span>Домик:</span><span class="v" id="s-cabin">Белый амур</span></div>
+        <div class="sum-row"><span>Период проживания:</span><span class="v" id="s-nights">3 ночи</span></div>
+        <div class="sum-row"><span>Гости:</span><span class="v" id="s-guests">2 персоны</span></div>
+        <div class="sum-div"></div>
+        <div class="sum-sub">
+          <div class="r"><span>Базовая стоимость:</span><span id="s-base">42 000 ₽</span></div>
+          <div class="r disc" id="s-disc-row" style="display:none"><span>Спецскидка (15% от 3 ночей):</span><span id="s-disc">-6 300 ₽</span></div>
+        </div>
+        <div class="sum-total">
+          <div class="lbl">Итого к оплате:</div>
+          <div class="amt" id="s-total">35 700 ₽</div>
+        </div>
+        <div class="sum-gift">
+          <span style="font-size:1rem;flex-shrink:0">*</span>
+          <div>
+            <span class="gt">Чайный уголок — в подарок!</span>
+            <span class="gd">Каждому нашему гостю при заезде дарим душистый горный чай, баночку фермерского меда и домашнее варенье.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="plaques">
+      <div class="plaque-warm">
+        <span class="e">Подарок при заезде</span>
+        <h4>Атмосферный чайный уголок</h4>
+        <p>Каждому нашему любимому гостю при заезде мы дарим частичку кавказского тепла: ароматный горный чай из местных целебных трав, баночку домашнего варенья и натуральный мед абсолютно бесплатно в подарок прямо в ваш домик.</p>
+      </div>
+      <div class="plaque-white">
+        <span class="e">Связь и комфорт</span>
+        <h4>Надежная связь и интернет</h4>
+        <p>Мы знаем, как вам важно быть на надежной связи с близкими. Поэтому в Усадьбе Плавни вас ждет уверенный прием мобильной связи и стабильный высокоскоростной Wi-Fi интернет на всей территории и в каждом домике.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="care" id="care">
+  <div class="sec-inner-wide">
+    <div class="care-header">
+      <h2>Детали и забота</h2>
+      <p>Мы позаботились обо всех мелочах вашего загородного быта, чтобы вы могли полностью сосредоточиться на умиротворении и отдыхе.</p>
+    </div>
+    <div class="care-grid" id="care-grid"></div>
+  </div>
+</section>
+
+<section class="tours" id="tours">
+  <div class="sec-inner-wide">
+    <div class="tours-header">
+      <span class="eyebrow eyebrow-warm">Окрестности усадьбы</span>
+      <h2>Экспедиции и приключения</h2>
+      <p>Природа вокруг Усадьбы Плавни полна удивительных открытий. Мы организуем для вас самые незабываемые горные тропы, лесные экспедиции и конные прогулки по ущельям и перевалам Карачаево-Черкессии.</p>
+    </div>
+    <div class="tour-card">
+      <div class="tour-img">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Горные вершины" loading="lazy">
+        <div class="tour-img-ov"></div>
+        <div class="tour-badge">⏱ Экспедиция</div>
+      </div>
+      <div class="tour-body">
+        <h3>Название</h3>
+        <p>Описание</p>
+        <div class="tour-footer">
+          <div class="tour-loc">▶ Кавказ • КЧР</div>
+          <button class="tour-link" onclick="goto('booking')">↗</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricelist" id="prices">
+  <div class="sec-inner-wide">
+    <div class="price-box">
+      <div class="price-icon"></div>
+      <h2>Стоимость услуг</h2>
+      <p>У нас нет скрытых комиссий, доплат за пользование бассейном или за уборку. Мы подготовили подробный и честный прайс-лист на все услуги.</p>
+      <button class="btn-dark" onclick="openM('price-modal')">Посмотреть прайс-лист услуг ›</button>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="faq-header">
+      <span class="eyebrow">Часто спрашивают</span>
+      <h2>Вопросы и ответы</h2>
+    </div>
+    <div class="faq-list" id="faq-list"></div>
+    <div class="faq-help">
+      <span style="color:var(--warm)">?</span>
+      <p>Возник другой вопрос? <a onclick="goto('booking')">Оставьте запрос в блоке бронирования</a>, и мы подробно проконсультируем вас.</p>
+    </div>
+  </div>
+</section>
+
+<section class="map-sec" id="location">
+  <div class="sec-inner-wide">
+    <div class="map-header">
+      <span class="eyebrow eyebrow-warm">Наше расположение</span>
+      <h2>Карта и виртуальный тур</h2>
+    </div>
+    <div class="map-grid">
+      <div class="map-card">
+        <div>
+          <span class="ce">Интерактивный опыт</span>
+          <h3>Виртуальный 3D-тур</h3>
+          <p>Прогуляйтесь по ухоженной территории Усадьбы Плавни и загляните внутрь наших домиков с панорамными окнами прямо со своего экрана.</p>
+        </div>
+        <div class="tour-player">
+          <div class="tour-prev" id="tp" onclick="startTour()">
+            <div class="tour-prev-bg" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80')"></div>
+            <button class="tour-play">▶</button>
+            <span class="tour-play-lbl">Запустить 3D прогулку</span>
+          </div>
+          <div id="ta" style="display:none;position:absolute;inset:0;background:#000;border-radius:1rem">
+            <div style="position:absolute;inset:0;overflow:hidden">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80" alt="Панорама" style="width:200%;height:100%;object-fit:cover;filter:brightness(.7);animation:panorama 30s linear infinite" loading="lazy">
+            </div>
+            <div style="position:absolute;inset:0;background:rgba(0,0,0,.2)"></div>
+            <div style="position:absolute;top:1rem;left:1rem;right:1rem;display:flex;justify-content:space-between;align-items:center;z-index:5">
+              <span style="background:#22c55e;color:#fff;font-size:9px;font-family:monospace;font-weight:700;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase">● Панорама 360° • Гостиная</span>
+              <button onclick="stopTour()" style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:#fff;background:rgba(255,255,255,.2);padding:.25rem .75rem;border-radius:9999px;border:none;cursor:pointer">Выйти</button>
+            </div>
+            <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;text-align:center;z-index:5">
+              <a href="https://yandex.ru/maps/org/usadba_plavni/74173296214/gallery/?tab=panoramas" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.375rem;padding:.5rem 1rem;background:var(--warm);color:#fff;font-size:10px;font-family:monospace;text-transform:uppercase;font-weight:700;border-radius:9999px;text-decoration:none">Открыть реальный 3D-тур на Яндекс ▶</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-card">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <span class="ce">Наше местоположение</span>
+              <h3>Горы Карачаево-Черкессии</h3>
+            </div>
+            <div class="map-badge"> 43.7955° N, 41.2721° E</div>
+          </div>
+          <p>Мы находимся в уединенном и живописном ущелье Карачаево-Черкессии, окруженном величественными вершинами Кавказа и вековыми хвойными лесами.</p>
+        </div>
+        <div class="map-frame">
+          <iframe src="https://yandex.ru/map-widget/v1/?oid=74173296214" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="dir-grid">
+      <div class="dir-card">
+        <span class="de">Из Минеральных Вод</span>
+        <p class="dt">Около 210 км • 2.5 часа</p>
+        <p class="dd">Двигайтесь из аэропорта по трассе А-156 в направлении Черкесска, затем по живописной горной дороге в сторону Архыза до указателя к Усадьбе Плавни.</p>
+      </div>
+      <div class="dir-card">
+        <span class="de">Из Ставрополя</span>
+        <p class="dt">Около 230 км • 3 часа</p>
+        <p class="dd">Следуйте на юг через Невинномысск и Черкесск по направлению к Карачаевску и горным перевалам, наслаждаясь панорамными видами Кавказского хребта.</p>
+      </div>
+      <div class="dir-card">
+        <span class="de">Навигатору на заметку</span>
+        <p class="dt">Координаты в навигатор</p>
+        <p class="dd">Просто введите в Яндекс.Навигатор запрос <span style="color:var(--warm);font-weight:500">«Усадьба Плавни»</span> или точные координаты: <span style="color:var(--warm);font-weight:500">43.795521, 41.272120</span>. Дорога полностью асфальтирована.</p>
+      </div>
+    </div>
+    <div class="map-finale">
+      <p>«Приезжайте, здесь тихо, зелено и не нужно никуда спешить.»</p>
+      <button class="btn-warm" onclick="goto('booking')">Забронировать отдых</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="bn">Усадьба Плавни</span>
+        <p>Премиальная загородная усадьба в горах Карачаево-Черкессии. Место абсолютной тишины, величественных кавказских вершин и хвойного уюта.</p>
+      </div>
+      <div>
+        <span class="footer-sec-ttl">Контакты</span>
+        <a href="tel:+79220000000" class="footer-contact"> <span style="font-size:.875rem">+7 (922) 000-00-00</span></a>
+        <a href="mailto:info@usadba-plavni.ru" class="footer-contact">✉ info@usadba-plavni.ru</a>
+        <div class="footer-contact"> <span>Карачаево-Черкесская Республика, горный район Архыз</span></div>
+      </div>
+      <div>
+        <span class="footer-sec-ttl">Мессенджеры для связи</span>
+        <a href="https://t.me/usadba_plavni" target="_blank" rel="noreferrer" class="footer-social"><span class="footer-soc-icon"></span> Telegram Support</a>
+        <a href="https://wa.me/79220000000" target="_blank" rel="noreferrer" class="footer-social"><span class="footer-soc-icon"></span> WhatsApp Manager</a>
+        <a href="https://max.ru/chat" target="_blank" rel="noreferrer" class="footer-social"><span class="footer-soc-icon"></span> MAX Messenger</a>
+      </div>
+    </div>
+    <div class="footer-div"></div>
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        <p>© 2026 УСАДЬБА ПЛАВНИ • КАРАЧАЕВО-ЧЕРКЕССИЯ. ВСЕ ПРАВА ЗАЩИЩЕНЫ.</p>
+        <p>ИП Александр П. • ОГРНИП 326090000000000</p>
+      </div>
+      <div class="footer-right">
+        <button class="btn-privacy" onclick="alert('Политика конфиденциальности: Мы надежно защищаем ваши персональные данные и не передаем их третьим лицам.')"> Политика конфиденциальности</button>
+        <button class="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SERVICE MODAL -->
+<div class="modal" id="svc-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeM('svc-modal')">✕</button>
+    <div class="modal-cover">
+      <img id="sm-img" src="" alt="">
+      <div class="modal-cover-grad"></div>
+      <h3 class="modal-cover-title" id="sm-title"></h3>
+    </div>
+    <div class="modal-content">
+      <p id="sm-desc"></p>
+      <p id="sm-quote" style="font-family:var(--editorial);font-style:italic;font-size:.875rem;color:#78716c;border-left:2px solid var(--warm);padding:.25rem .75rem;margin-bottom:1.5rem;display:none"></p>
+      <div class="modal-sec-lbl">✦ Характеристики и оснащение:</div>
+      <ul class="modal-specs" id="sm-specs"></ul>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-modal" onclick="closeM('svc-modal');goto('booking')">Заказать услугу</button>
+    </div>
+  </div>
+</div>
+
+<!-- CABIN MODAL -->
+<div class="modal" id="cabin-modal">
+  <div class="modal-box cabin-modal-box">
+    <button class="modal-close" onclick="closeM('cabin-modal')">✕</button>
+    <div class="modal-cover">
+      <img id="cm-img" src="" alt="">
+      <div class="modal-cover-grad"></div>
+      <div style="position:absolute;bottom:1.5rem;left:2rem;right:2rem;z-index:2">
+        <span id="cm-badge" style="display:inline-block;padding:.375rem .875rem;background:var(--warm);color:#fff;font-family:monospace;font-size:9px;text-transform:uppercase;letter-spacing:.15em;font-weight:700;border-radius:9999px;margin-bottom:.5rem"></span>
+        <h3 style="font-family:var(--serif);font-size:1.75rem;color:#fff" id="cm-title"></h3>
+      </div>
+    </div>
+    <div class="cabin-modal-content">
+      <div style="margin-bottom:1.5rem">
+        <div class="modal-sec-lbl">О домике</div>
+        <p style="font-size:.875rem;color:#57534e;line-height:1.7;font-weight:300" id="cm-desc"></p>
+      </div>
+      <div style="margin-bottom:1.5rem">
+        <div class="modal-sec-lbl">Удобства и оснащение</div>
+        <div class="cabin-feat-grid" id="cm-feats"></div>
+      </div>
+      <div class="kitchen-box">
+        <div class="kitchen-head">☕ <span>Благоустроенная кухня</span></div>
+        <p>Вы всегда можете самостоятельно приготовить любые ваши любимые блюда на полностью оборудованной кухне прямо в домике. Вся необходимая качественная посуда, плита, холодильник, чайник и СВЧ-печь уже заботливо подготовлены для вас.</p>
+      </div>
+    </div>
+    <div class="cabin-modal-footer">
+      <div class="offer">Спецпредложение: <em>Скидка 15% от 3-х ночей</em></div>
+      <div class="cabin-modal-btns">
+        <button class="btn-cancel" onclick="closeM('cabin-modal')">Закрыть</button>
+        <button class="btn-book" onclick="closeM('cabin-modal');goto('booking')">Забронировать сейчас →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRICE MODAL -->
+<div class="modal" id="price-modal">
+  <div class="modal-box price-modal-box">
+    <button class="modal-close" style="background:#f5f5f4;color:#57534e" onclick="closeM('price-modal')">✕</button>
+    <div class="price-modal-hdr">
+      <span style="font-size:9px;font-family:monospace;text-transform:uppercase;letter-spacing:.25em;color:var(--warm);display:block;margin-bottom:.5rem">Актуальные тарифы</span>
+      <h3 style="font-family:var(--serif);font-size:1.75rem;color:#1c1917">Прайс-лист Усадьбы Плавни</h3>
+      <p style="font-size:.875rem;color:#78716c;font-weight:300;margin-top:.375rem">Цены актуальны на текущий сезон 2026 года. Все налоги и базовая уборка включены.</p>
+    </div>
+    <div class="price-modal-wrap">
+      <table class="price-tbl" id="price-tbl"></table>
+    </div>
+    <div class="price-modal-foot">
+      <div class="price-modal-note">✦ Пользование теплым бассейном включено в проживание абсолютно бесплатно</div>
+      <button class="btn-modal" onclick="closeM('price-modal');goto('booking')">Перейти к бронированию</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const scenarios=[
+  {id:1,title:"Утро на террасе с кофе",description:"Вы просыпаетесь не от будильника, а от мягкого света на чистых льняных простынях. Выходите на террасу с чашкой свежего кофе. Перед вами — горы, лес, пруд. Тишина. Только вы, природа и этот уютный момент.",image:"https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80"},
+  {id:2,title:"День у бассейна с видом на горы",description:"Тёплая вода, шезлонг, горы на горизонте. Вы ныряете, потом лежите, смотрите в небо. Дети плещутся рядом. Вы просто отдыхаете — без планов, без суеты.",image:"https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&w=800&q=80"},
+  {id:3,title:"Прогулка в лесу",description:"Вы берёте с собой свежесваренный кофе и выходите на лесную тропу. Идёте медленно, вдыхаете запах леса. Кофе согревает ладони, лес — душу. Никакой цели.",image:"https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"},
+  {id:4,title:"Баня на дровах с травяным чаем",description:"Жар и аромат натурального дерева. После парилки — глоток травяного чая с медом и вы чувствуете, что как будто заново родились. Баня, которая согревает не только тело, но и душу.",image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80"},
+  {id:5,title:"Семейный ужин у мангала",description:"Дрова прогорели до углей. Мясо шипит на решётке. Дети играют рядом. Ужин на природе — это маленькое семейное торжество, где никто не смотрит в телефон.",image:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80"},
+  {id:6,title:"Вечер у костра с душевными разговорами",description:"Огонь потрескивает, над головой — звёзды. Вы сидите у костра в обнимку с близкими. Закутались в плед, в руке — кружка с горячим чаем. Настоящее тихое счастье.",image:"https://images.unsplash.com/photo-1508873696983-2df519f0397e?auto=format&fit=crop&w=800&q=80"},
+  {id:7,title:"Караоке для души (без соседей)",description:"Здесь, где никто не оценивает, вы берёте микрофон, включаете любимые песни и поёте. Громко, от души. Отдых по вашим правилам, где можно быть собой.",image:"https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=800&q=80"},
+  {id:8,title:"Сибирский чан с хвоей",description:"Аромат еловых веток, целебных трав и цитрусов в горячей воде. Звёзды, тишина, полное расслабление. Чан греет не только тело — он согревает изнутри.",image:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80"}
+];
+const services=[
+  {id:1,name:"Тёплый бассейн",description:"Чистейшая вода, разная степень глубины, удобные шезлонги с матрасами.",quote:"«Из бассейна не хочется выходить» — говорят гости.",image:"https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",specs:["Разная степень глубины","Подогрев круглый год","Шезлонги с матрасами","Бесплатно для гостей"]},
+  {id:2,name:"Банный чан",description:"Просторный горячий чан с хвойными ветками, травами и цитрусами под открытым небом.",quote:"«Чан покорил наше сердце» — говорят гости.",image:"https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",specs:["Еловые ветки и цитрусы","Вместимость до 6 человек","3 часа сеанс","5 000 ₽ за сеанс"]},
+  {id:3,name:"Баня на дровах",description:"Настоящая русская баня для оздоровления и полноценного отдыха тела и ума.",quote:"«Согревает не только тело, но и душу» — говорят гости.",image:"https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80",specs:["Настоящая каменка","Душистые веники","Травяной чай включён","2 часа сеанс"]},
+  {id:4,name:"Караоке",description:"Отдельное помещение с профессиональной акустической аппаратурой. Пойте для себя, никто не мешает.",quote:"«Потрясающий звук и полная свобода» — говорят гости.",image:"https://images.unsplash.com/photo-1516280440614-37939bbacd6a?auto=format&fit=crop&w=800&q=80",specs:["Профессиональные микрофоны","Большая фонотека","Без ограничений по громкости","1 500 ₽ в час"]},
+  {id:5,name:"Мангальная зона",description:"Персональная мангальная зона у каждого домика, оснащенная всем необходимым и теплым освещением.",quote:"«Персональная зона — шикарно» — говорят гости.",image:"https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",specs:["Индивидуальный мангал","Уголь и розжиг","Тёплое освещение","Бесплатно"]},
+  {id:6,name:"Сапборды и рыбалка",description:"Увлекательные неспешные прогулки по воде на SUP-бордах или тихое умиротворяющее утро с удочкой.",quote:"«Тишина на озере завораживает» — говорят гости.",image:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",specs:["Широкие устойчивые SUP-борды","Жилеты включены","Удочки и снасти","Пруд на территории"]}
+];
+const cabins=[
+  {id:"white-amur",name:"Белый амур",description:"Просторный двухэтажный домик у самого пруда. Большая терраса с мангалом и шезлонгами. Внутри — уютная гостиная, полностью оборудованная кухня, две спальни. Тёплый пол по всему первому этажу, панорамные окна и собственный выход к воде.",capacity:"До 4-х гостей",pw:14000,pwe:17000,disc:"Скидка 15% от 3 ночей",features:["Тёплый пол","Панорамные окна","Выход к пруду","Терраса с мангалом","2 спальни","Кухня"],images:["https://images.unsplash.com/photo-1449158742827-b9ef97c2c0bf?auto=format&fit=crop&w=800&q=80","https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"]},
+  {id:"mirror-carp",name:"Зеркальный карп",description:"Просторный двухэтажный домик рядом с бассейном. Собственная терраса с зоной для отдыха, индивидуальным мангалом. Внутри — светлая гостиная, кухня со всей необходимой посудой, две изолированные спальни. Тёплый пол и огромные панорамные окна.",capacity:"До 4-х гостей",pw:14000,pwe:17000,disc:"Скидка 15% от 3 ночей",features:["Тёплый пол","Панорамные окна","Рядом с бассейном","Терраса с мангалом","2 спальни","Кухня"],images:["https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80","https://images.unsplash.com/photo-1449158742827-b9ef97c2c0bf?auto=format&fit=crop&w=800&q=80"]},
+  {id:"rainbow-trout",name:"Радужная форель",description:"Просторный двухэтажный домик с шикарным выходом к воде. Собственная терраса с мангалом и шезлонгами, откуда открывается завораживающий вид на горы и лес. Внутри — гостиная, полностью оборудованная кухня, две спальни.",capacity:"До 4-х гостей",pw:14000,pwe:17000,disc:"Скидка 15% от 3 ночей",features:["Вид на горы","Выход к воде","Терраса с мангалом","Шезлонги","2 спальни","Кухня"],images:["https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80","https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80"]},
+  {id:"nalim",name:"Налим",description:"Уютный и просторный домик для большой компании или дружной семьи. Просторная гостиная с массивным деревянным столом, полностью оборудованная кухня. Мансардный этаж со спальными местами. Терраса с видом на горы.",capacity:"До 7-х гостей",pw:10000,pwe:12000,disc:"Скидка 15% от 3 ночей",features:["До 7 гостей","Мансардный этаж","Большой стол","Терраса","Вид на горы","Кухня"],images:["https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=800&q=80","https://images.unsplash.com/photo-1449158742827-b9ef97c2c0bf?auto=format&fit=crop&w=800&q=80"]}
+];
+const reviews=[
+  {id:1,author:"Виктория",stars:5,text:"ВОСТОРГ! Я очень рада, что нашла это место, мы с мужем уставшие с дороги приехали и были в таком восторге! Нам открыли горячий бассейн, в доме было тепло и уютно, все очень чисто!! Отдельно хочу отметить очень качественную мебель (кровать невероятная, мы сразу отключились и выспались на ней так, как давно не спали)."},
+  {id:2,author:"Ирина",stars:5,text:"Усадьба Плавни однозначно заслуживает высшей оценки — пять звёздочек! Очень красивая, благоустроенная территория. Много зон отдыха с качелями, на которых заботливо лежат пледы. Везде чувствуется атмосфера уюта и искренняя забота о гостях. Однозначно вернёмся!"},
+  {id:3,author:"Данил",stars:5,text:"Уютный дом отдыха. Отдыхали семьей и получили колоссальное удовольствие. Хозяева очень приветливые и отзывчивые, что мы очень оценили. Номера идеально чистые, аккуратные и современные, однозначно советую всем для спокойного загородного уикенда."},
+  {id:4,author:"Анастасия",stars:5,text:"Отличное место для полноценного отдыха. Все продумано до мелочей, комфортно и уютно. Шикарный вид на озеро и гору. Баня современная, наверху с удовольствием пели караоке. Есть чистый теплый бассейн — само то после бани. Порадовал ремонт и уютная атмосфера."},
+  {id:5,author:"Наталья",stars:5,text:"Отмечали день рождения дочери в Усадьбе Плавни. Это невероятное место для полноценного отдыха и душой и телом. Два дня пролетели как в сказке! Огромное спасибо хозяевам, которые приняли нас очень гостеприимно. Все на высшем уровне, советую всем!"}
+];
+const careItems=[
+  {id:1,icon:"",title:"Парковка",description:"Удобная охраняемая парковка прямо на территории. Приехали — и забыли о машине до самого конца вашего беззаботного отдыха."},
+  {id:2,icon:"⏱",title:"Ускоренная регистрация заезда и отъезда",description:"Никаких очередей, долгих бумаг и задержек. Вы заезжаете максимально быстро и выезжаете без лишних хлопот."},
+  {id:3,icon:"",title:"Прачечная",description:"Если во время длительного загородного отдыха вам понадобится стирка — у нас есть полноценная прачечная, вам не придется думать о быте."},
+  {id:4,icon:"",title:"Настольные игры и аэрохоккей",description:"Всё для уютного и запоминающегося вечера в компании близких людей в теплом деревянном интерьере."},
+  {id:5,icon:"",title:"Шезлонги",description:"Удобные эргономичные шезлонги с мягкими матрасами установлены у подогреваемого бассейна и на личных террасах ваших домиков."},
+  {id:6,icon:"",title:"Способы оплаты",description:"Мы принимаем наличные, банковские карты и прямые переводы на расчетный счет. Оплачивайте так, как удобно именно вам."},
+  {id:7,icon:"⚡",title:"Электрокар",description:"Бесшумный и экологичный электрокар для комфортных прогулок или быстрой перевозки багажа по нашей ухоженной территории."}
+];
+const priceList=[
+  {service:"Проживание в домике Белый амур / Зеркальный карп / Радужная форель (в сутки)",price:"14 000 руб (будни) / 17 000 руб (выходные)",note:""},
+  {service:"Проживание в домике Налим (до 7 гостей, в сутки)",price:"10 000 руб (будни) / 12 000 руб (выходные)",note:""},
+  {service:"Аренда сибирского банного чана (за сеанс 3 часа)",price:"5 000 руб",note:"Именинникам от 2 ночей бесплатно!"},
+  {service:"Аренда русской бани на дровах (за сеанс 2 часа)",price:"4 000 руб",note:"Домашние веники и чай включены"},
+  {service:"Аренда караоке-зала (в час)",price:"1 500 руб",note:"Без ограничений по громкости"},
+  {service:"Пользование подогреваемым бассейном",price:"Бесплатно",note:"Входит в стоимость проживания"},
+  {service:"Аренда SUP-борда (в час)",price:"800 руб",note:"Инструктаж и жилет включены"},
+  {service:"Фермерский завтрак на персону",price:"500 руб",note:"Заказывается заблаговременно с вечера"},
+  {service:"Аренда удочек и снаряжения (на день)",price:"1 000 руб",note:""}
+];
+const faqs=[
+  {id:1,q:"Входит ли бассейн в стоимость проживания?",a:"Да, пользование нашим круглогодичным подогреваемым бассейном с чистейшей водой для всех проживающих гостей абсолютно бесплатно и не имеет ограничений по времени в течение дня."},
+  {id:2,q:"В какое время осуществляется заезд и выезд?",a:"Стандартное время заезда у нас начинается с 14:00, а время выезда — до 12:00. Возможность раннего заезда или позднего выезда согласовывается индивидуально при наличии свободного домика."},
+  {id:3,q:"Будет ли у вас интересно и комфортно детям?",a:"Да, безусловно! В нашем теплом бассейне выделена специальная безопасная детская зона с небольшой глубиной, на территории есть качели, настольные игры и аэрохоккей, а также много безопасного места для лесных прогулок."},
+  {id:4,q:"Можно ли приехать на отдых со своим питомцем?",a:"К сожалению, правила нашей усадьбы не предусматривают размещение с домашними животными. Мы стремимся сохранять гипоаллергенную среду и гарантировать идеальную чистоту для всех гостей."},
+  {id:5,q:"Разрешено ли курение на территории усадьбы?",a:"Курение любых видов сигарет, кальянов, вейпов строго запрещено внутри всех наших домиков и бани. На ухоженной лесной территории для этого оборудовано специальное комфортное место с пепельницами."},
+  {id:6,q:"Есть ли у вас скидки или подарки для именинников?",a:"Конечно! Для именинников при бронировании любого домика на срок от 2-х ночей мы с радостью дарим расслабляющий сеанс (три полных часа) в нашем знаменитом горячем банном чане абсолютно в подарок!"},
+  {id:7,q:"Что необходимо взять с собой на отдых?",a:"Рекомендуем взять только удобную одежду по погоде, купальники и ваше прекрасное настроение. Мягкие халаты, тапочки, белоснежное постельное белье, свежие полотенца и гигиенические наборы уже бережно разложены в ваших домиках."},
+  {id:8,q:"Выдаются ли отчетные документы и кассовые чеки?",a:"Да, мы работаем абсолютно официально. При заезде или бронировании мы предоставляем фискальные кассовые чеки, а по запросу подготовим полный пакет документов для вашей бухгалтерии."}
+];
+
+// UTILS
+function goto(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+function hs(id,amt){document.getElementById(id)?.scrollBy({left:amt,behavior:'smooth'})}
+function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
+function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+
+// RENDER SCENARIOS
+const ss=document.getElementById('ss');
+scenarios.forEach(s=>{
+  ss.innerHTML+=`<div class="scen-card"><div class="scen-img"><div class="scen-img-ov"></div><img src="${s.image}" alt="${s.title}" loading="lazy"><span class="scen-num">0${s.id}</span></div><div class="scen-body"><h3>${s.title}</h3><p>${s.description}</p></div></div>`;
+});
+
+// RENDER SERVICES
+const sg=document.getElementById('svc-grid');
+services.forEach(s=>{
+  sg.innerHTML+=`<div class="svc-card"><div><div class="svc-card-img"><img src="${s.image}" alt="${s.name}" loading="lazy"></div><h3>${s.name}</h3><p class="desc">${s.description}</p>${s.quote?`<p class="quote">${s.quote}</p>`:''}</div><button class="svc-more" onclick="openSvc(${s.id})">Подробнее о характеристиках →</button></div>`;
+});
+function openSvc(id){
+  const s=services.find(x=>x.id===id);
+  document.getElementById('sm-img').src=s.image;
+  document.getElementById('sm-title').textContent=s.name;
+  document.getElementById('sm-desc').textContent=s.description;
+  const q=document.getElementById('sm-quote');
+  if(s.quote){q.textContent=s.quote;q.style.display='block';}else q.style.display='none';
+  document.getElementById('sm-specs').innerHTML=s.specs.map(sp=>`<li class="modal-spec"><span class="spec-dot"></span><span>${sp}</span></li>`).join('');
+  openM('svc-modal');
+}
+
+// RENDER REVIEWS
+const rs=document.getElementById('rs');
+reviews.forEach(r=>{
+  rs.innerHTML+=`<div class="rev-card"><div><div class="rev-stars">${'★'.repeat(r.stars).split('').map(()=>'<span class="rev-star">★</span>').join('')}</div><p class="rev-text">${r.text}</p></div><div class="rev-footer"><div class="rev-author"><span class="name">${r.author}</span><span class="label">Гость Усадьбы Плавни</span></div><span class="rev-badge">Подтвержденный отзыв</span></div></div>`;
+});
+
+// RENDER CABINS
+let selCabin=cabins[0].id;
+let cabIdx={};cabins.forEach(c=>cabIdx[c.id]=0);
+function renderCabins(){
+  const cg=document.getElementById('cabins-grid');cg.innerHTML='';
+  cabins.forEach(c=>{
+    const idx=cabIdx[c.id]||0;
+    cg.innerHTML+=`<div class="cabin-card"><div><div class="cabin-gallery"><img src="${c.images[idx]}" alt="${c.name}" loading="lazy"><div class="cabin-gallery-ov"></div><button class="cabin-arr l" onclick="cabP('${c.id}',${c.images.length})">‹</button><button class="cabin-arr r" onclick="cabN('${c.id}',${c.images.length})">›</button><div class="cabin-dots">${c.images.map((_,i)=>`<div class="cabin-dot${i===idx?' on':''}"></div>`).join('')}</div><span class="cabin-badge"> ${c.capacity}</span></div><div class="cabin-body"><h3>${c.name}</h3><p class="desc">${c.description}</p><div class="cabin-feats">${c.features.map(f=>`<div class="cabin-feat">✓ ${f}</div>`).join('')}</div></div></div><div class="cabin-footer"><div class="cabin-price-row"><div><p class="price-label">Стоимость проживания:</p><div class="price-nums"><span class="amt">${c.pw.toLocaleString()} ₽</span><span class="per">/ будни</span><span class="amt" style="margin-left:.5rem">${c.pwe.toLocaleString()} ₽</span><span class="per">/ вых.</span></div><p class="price-disc">« ${c.disc} »</p></div></div><div class="cabin-btns"><button class="btn-outline" onclick="openCabin('${c.id}')">Подробнее о домике</button><button class="btn-fill" onclick="goto('booking')">Забронировать</button></div></div></div>`;
+  });
+}
+function cabN(id,len){cabIdx[id]=(cabIdx[id]+1)%len;renderCabins()}
+function cabP(id,len){cabIdx[id]=(cabIdx[id]-1+len)%len;renderCabins()}
+function openCabin(id){
+  const c=cabins.find(x=>x.id===id);
+  document.getElementById('cm-img').src=c.images[0];
+  document.getElementById('cm-badge').textContent=c.capacity;
+  document.getElementById('cm-title').textContent='Домик «'+c.name+'»';
+  document.getElementById('cm-desc').textContent=c.description;
+  document.getElementById('cm-feats').innerHTML=c.features.map(f=>`<div class="cabin-feat-item">✓ ${f}</div>`).join('');
+  openM('cabin-modal');
+}
+renderCabins();
+
+// BOOKING
+cabins.forEach(c=>{
+  const el=document.createElement('div');
+  el.className='cabin-opt'+(c.id===selCabin?' sel':'');
+  el.innerHTML=`<span class="cn">${c.name}</span><span class="cc">${c.capacity}</span>`;
+  el.onclick=()=>{
+    selCabin=c.id;
+    document.querySelectorAll('.cabin-opt').forEach(x=>x.classList.remove('sel'));
+    el.classList.add('sel');
+    upd();
+  };
+  document.getElementById('cabin-sel').appendChild(el);
+});
+function upd(){
+  const c=cabins.find(x=>x.id===selCabin);
+  const ci=document.getElementById('ci').value;
+  const co=document.getElementById('co').value;
+  const g=parseInt(document.getElementById('gs').value)||2;
+  const n=Math.max(1,Math.ceil((new Date(co)-new Date(ci))/(86400000)));
+  const base=c.pw*n;const ad=n>=3;const disc=ad?Math.round(base*.15):0;const total=base-disc;
+  const ns=n===1?'ночь':n<5?'ночи':'ночей';
+  const gs=g===1?'персона':g<5?'персоны':'персон';
+  document.getElementById('s-cabin').textContent=c.name;
+  document.getElementById('s-nights').textContent=n+' '+ns;
+  document.getElementById('s-guests').textContent=g+' '+gs;
+  document.getElementById('s-base').textContent=base.toLocaleString()+' ₽';
+  const dr=document.getElementById('s-disc-row');
+  if(ad){dr.style.display='flex';document.getElementById('s-disc').textContent='-'+disc.toLocaleString()+' ₽';}else dr.style.display='none';
+  document.getElementById('s-total').textContent=total.toLocaleString()+' ₽';
+}
+upd();
+function sub(){
+  const nm=document.getElementById('gname').value.trim();
+  const ph=document.getElementById('gphone').value.trim();
+  if(!nm||!ph){alert('Пожалуйста, заполните имя и номер телефона');return;}
+  document.getElementById('form-wrap').style.display='none';
+  const s=document.getElementById('bsucc');s.classList.add('show');
+  document.getElementById('succ-txt').innerHTML=`Спасибо, ${nm}! Наш администратор свяжется с вами по номеру <strong>${ph}</strong> в течение 10 минут для подтверждения бронирования.`;
+}
+function rst(){
+  document.getElementById('form-wrap').style.display='block';
+  document.getElementById('bsucc').classList.remove('show');
+  document.getElementById('gname').value='';document.getElementById('gphone').value='';
+}
+
+// RENDER CARE
+const cg2=document.getElementById('care-grid');
+careItems.forEach(item=>{
+  cg2.innerHTML+=`<div class="care-card"><div><div class="care-icon">${item.icon}</div><h3>${item.title}</h3><p>${item.description}</p></div><div class="care-foot"><span>Усадьба Плавни</span><span class="inc">Включено в отдых</span></div></div>`;
+});
+
+// RENDER PRICE TABLE
+document.getElementById('price-tbl').innerHTML=`<thead><tr><th>Услуга / Размещение</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-left:1.5rem">Примечание</th></tr></thead><tbody>${priceList.map(p=>`<tr><td>${p.service}</td><td>${p.price}</td><td>${p.note||'—'}</td></tr>`).join('')}</tbody>`;
+
+// RENDER FAQ
+let openFaq=1;
+function renderFaq(){
+  const fl=document.getElementById('faq-list');fl.innerHTML='';
+  faqs.forEach(f=>{
+    const o=openFaq===f.id;
+    fl.innerHTML+=`<div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(${f.id})"><span>${f.q}</span><div class="faq-ind${o?' open':''}">${o?'−':'+'}</div></button><div class="faq-answer${o?' open':''}"><div class="faq-answer-inner">${f.a}</div></div></div>`;
+  });
+}
+function toggleFaq(id){openFaq=openFaq===id?null:id;renderFaq()}
+renderFaq();
+
+// TOUR
+function startTour(){document.getElementById('tp').style.display='none';document.getElementById('ta').style.display='block'}
+function stopTour(){document.getElementById('ta').style.display='none';document.getElementById('tp').style.display='flex'}
+
+// Close modal on overlay click
+['svc-modal','cabin-modal','price-modal'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',function(e){if(e.target===this)closeM(id)});
+});
+</script>
+</body>
+</html>
