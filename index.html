@@ -1220,8 +1220,24 @@ if (imgContainer) imgContainer.parentElement.remove();
   
   document.getElementById('sm-desc').innerHTML = `
     <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <!-- ГАЛЕРЕЯ С ГОРИЗОНТАЛЬНОЙ ПРОКРУТКОЙ -->
-      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+      <!-- ГАЛЕРЕЯ С ТОНКОЙ ПОЛОСОЙ ПРОКРУТКИ -->
+      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
+        <style>
+          div[style*="overflow-x: auto"]::-webkit-scrollbar {
+            height: 6px;
+          }
+          div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 10px;
+          }
+          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+            background: #a4907c;
+            border-radius: 10px;
+          }
+          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
+            background: #8e7a68;
+          }
+        </style>
         <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
           <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:320px; object-fit:cover; display:block;">
         </div>
