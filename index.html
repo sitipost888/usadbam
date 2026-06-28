@@ -1211,7 +1211,8 @@ function openPoolModal() {
   document.getElementById('sm-specs').style.display = 'none';
   
   // Убираем фоновое фото
-  document.getElementById('sm-img').style.display = 'none';
+  const imgContainer = document.getElementById('sm-img');
+if (imgContainer) imgContainer.parentElement.remove();
   
   // Убираем надпись "✦ ХАРАКТЕРИСТИКИ..."
   const lbl = document.querySelector('.modal-sec-lbl');
