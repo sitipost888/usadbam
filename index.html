@@ -1082,7 +1082,7 @@ services.forEach(s => {
         ${s.quote ? `<p class="quote">${s.quote}</p>` : ''}
       </div>
       <button class="svc-more" onclick="${s.id === 1 ? 'openPoolModal()' : 'openSvc(' + s.id + ')'}">
-        Подробнее о характеристиках →
+        Подробнее →
       </button>
     </div>
   `;
@@ -1210,9 +1210,15 @@ function openPoolModal() {
   document.getElementById('sm-quote').style.display = 'none';
   document.getElementById('sm-specs').style.display = 'none';
   
+  // Убираем фоновое фото
+  document.getElementById('sm-img').style.display = 'none';
+  
+  // Убираем надпись "✦ ХАРАКТЕРИСТИКИ..."
+  const lbl = document.querySelector('.modal-sec-lbl');
+  if (lbl) lbl.style.display = 'none';
+  
   document.getElementById('sm-desc').innerHTML = `
     <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <!-- ===== ФОТО СВЕРХУ ===== -->
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
         <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
         <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
