@@ -1220,21 +1220,31 @@ if (imgContainer) imgContainer.parentElement.remove();
   
   document.getElementById('sm-desc').innerHTML = `
     <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-bottom: 1.5rem;">
-        <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
-        <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
-        <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
-        <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
-        <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
-        <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; height:120px; object-fit:cover; border-radius:0.75rem;">
+      <!-- ГАЛЕРЕЯ С ГОРИЗОНТАЛЬНОЙ ПРОКРУТКОЙ -->
+      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;">
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
+        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+          <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; height:320px; object-fit:cover; display:block;">
+        </div>
       </div>
       
       <p>Все гости «Усадьбы Плавни» могут посещать наш бассейн с современной системой очистки и подогревом воды.</p>
-      
       <p>Преимущества бассейна с подогревом – это удлинённый купальный сезон, возможность купаться не только в летний сезон, но и в прохладное время года. Это значит, что не нужно заранее планировать активность или ждать, когда вода прогреется.</p>
-      
       <p>В любое время года мы предлагаем комфортные условия для плавания — системы подогрева поддерживают температуру воды на уровне 33–36°C, что подходит как для взрослых, так и для детей.</p>
-      
       <p>Бассейн разделен на две зоны с разной степенью глубины, что делает его идеальным местом для семейного отдыха с детьми.</p>
       
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: #f5f5f4; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
