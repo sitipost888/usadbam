@@ -1071,18 +1071,36 @@ scenarios.forEach(s=>{
 });
 
 // RENDER SERVICES
-const sg=document.getElementById('svc-grid');
-services.forEach(s=>{
-  sg.innerHTML+=`<div class="svc-card"><div><div class="svc-card-img"><img src="${s.image}" alt="${s.name}" loading="lazy"></div><h3>${s.name}</h3><p class="desc">${s.description}</p>${s.quote?`<p class="quote">${s.quote}</p>`:''}</div><button class="svc-more" onclick="openSvc(${s.id})">Подробнее о характеристиках →</button></div>`;
+const sg = document.getElementById('svc-grid');
+services.forEach(s => {
+  sg.innerHTML += `
+    <div class="svc-card">
+      <div>
+        <div class="svc-card-img"><img src="${s.image}" alt="${s.name}" loading="lazy"></div>
+        <h3>${s.name}</h3>
+        <p class="desc">${s.description}</p>
+        ${s.quote ? `<p class="quote">${s.quote}</p>` : ''}
+      </div>
+      <button class="svc-more" onclick="${s.id === 1 ? 'openPoolModal()' : 'openSvc(' + s.id + ')'}">
+        Подробнее о характеристиках →
+      </button>
+    </div>
+  `;
 });
-function openSvc(id){
-  const s=services.find(x=>x.id===id);
-  document.getElementById('sm-img').src=s.image;
-  document.getElementById('sm-title').textContent=s.name;
-  document.getElementById('sm-desc').textContent=s.description;
-  const q=document.getElementById('sm-quote');
-  if(s.quote){q.textContent=s.quote;q.style.display='block';}else q.style.display='none';
-  document.getElementById('sm-specs').innerHTML=s.specs.map(sp=>`<li class="modal-spec"><span class="spec-dot"></span><span>${sp}</span></li>`).join('');
+
+function openSvc(id) {
+  const s = services.find(x => x.id === id);
+  document.getElementById('sm-img').src = s.image;
+  document.getElementById('sm-title').textContent = s.name;
+  document.getElementById('sm-desc').textContent = s.description;
+  const q = document.getElementById('sm-quote');
+  if (s.quote) {
+    q.textContent = s.quote;
+    q.style.display = 'block';
+  } else {
+    q.style.display = 'none';
+  }
+  document.getElementById('sm-specs').innerHTML = s.specs.map(sp => `<li class="modal-spec"><span class="spec-dot"></span><span>${sp}</span></li>`).join('');
   openM('svc-modal');
 }
 
