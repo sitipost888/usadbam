@@ -1122,89 +1122,104 @@ renderFaq();
 // TOUR
 function startTour(){document.getElementById('tp').style.display='none';document.getElementById('ta').style.display='block'}
 function stopTour(){document.getElementById('ta').style.display='none';document.getElementById('tp').style.display='flex'}
-// ==== КАСТОМНАЯ МОДАЛКА ДЛЯ БАССЕЙНА ====
-function openPoolModal() {
-  const s = services.find(x => x.id === 1);
-  document.getElementById('sm-img').src = s.image;
+// ==== КАСТОМНАЯ МОДАЛКА ДЛЯ ВСЕХ УСЛУГ ====
+function openPoolModal(id) {
+  const s = services.find(x => x.id === id);
+  if (!s) return;
+  
   document.getElementById('sm-title').textContent = s.name;
   document.getElementById('sm-quote').style.display = 'none';
   document.getElementById('sm-specs').style.display = 'none';
   
-  // Убираем фоновое фото
   const imgContainer = document.getElementById('sm-img');
-if (imgContainer) imgContainer.parentElement.remove();
+  if (imgContainer) imgContainer.parentElement.remove();
   
-  // Убираем надпись "✦ ХАРАКТЕРИСТИКИ..."
   const lbl = document.querySelector('.modal-sec-lbl');
   if (lbl) lbl.style.display = 'none';
   
-  document.getElementById('sm-desc').innerHTML = `
-    <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <!-- ГАЛЕРЕЯ С ТОНКОЙ ПОЛОСОЙ ПРОКРУТКИ -->
-      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
-        <style>
-          div[style*="overflow-x: auto"]::-webkit-scrollbar {
-            height: 2px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
-            background: #a4907c;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
-            background: #8e7a68;
-          }
-        </style>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-        <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
-          <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; height:320px; object-fit:cover; display:block;">
-        </div>
-      </div>
-      
-      <p>Все гости «Усадьбы Плавни» могут посещать наш бассейн с современной системой очистки и подогревом воды.</p>
-      <p>Преимущества бассейна с подогревом – это удлинённый купальный сезон, возможность купаться не только в летний сезон, но и в прохладное время года. Это значит, что не нужно заранее планировать активность или ждать, когда вода прогреется.</p>
-      <p>В любое время года мы предлагаем комфортные условия для плавания — системы подогрева поддерживают температуру воды на уровне 33–36°C, что подходит как для взрослых, так и для детей.</p>
-      <p>Бассейн разделен на две зоны с разной степенью глубины, что делает его идеальным местом для семейного отдыха с детьми.</p>
-      
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: #f5f5f4; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
-        <div><strong>Размер бассейна:</strong> 6×10 м</div>
-        <div><strong>Глубина для взрослых:</strong> 1 м 45 см</div>
-        <div><strong>Глубина для детей:</strong> 45 см</div>
-      </div>
-      
-      <p style="font-weight: 600; margin-top: 1.5rem;">Мы предлагаем нашим гостям:</p>
-      <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; margin: 0.5rem 0 1.5rem 0;">
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ гидромассаж двухструйный</li>
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ душ Шарко</li>
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ гейзер</li>
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ уличный душ</li>
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ шезлонги с матрасами</li>
-        <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ полотенца</li>
-      </ul>
-      
-      <div style="background: #fef3c7; border-left: 4px solid #d4af37; padding: 0.75rem 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; font-size: 0.9rem; color: #92400e;">
-        <strong>ВАЖНО:</strong> ответственность за безопасность пользования бассейном несут гости!
-      </div>
-    </div>
-  `;
+  let content = '';
   
+  if (id === 1) {
+    content = `
+      <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
+        <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
+          <style>
+            div[style*="overflow-x: auto"]::-webkit-scrollbar {
+              height: 2px;
+            }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+              background: #f0f0f0;
+              border-radius: 10px;
+            }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+              background: #a4907c;
+              border-radius: 10px;
+            }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
+              background: #8e7a68;
+            }
+          </style>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+          <div style="flex: 0 0 85%; max-width: 85%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+            <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; height:320px; object-fit:cover; display:block;">
+          </div>
+        </div>
+        
+        <p>Все гости «Усадьбы Плавни» могут посещать наш бассейн с современной системой очистки и подогревом воды.</p>
+        <p>Преимущества бассейна с подогревом – это удлинённый купальный сезон, возможность купаться не только в летний сезон, но и в прохладное время года. Это значит, что не нужно заранее планировать активность или ждать, когда вода прогреется.</p>
+        <p>В любое время года мы предлагаем комфортные условия для плавания — системы подогрева поддерживают температуру воды на уровне 33–36°C, что подходит как для взрослых, так и для детей.</p>
+        <p>Бассейн разделен на две зоны с разной степенью глубины, что делает его идеальным местом для семейного отдыха с детьми.</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; background: #f5f5f4; border-radius: 1rem; padding: 1.5rem; margin: 1.5rem 0;">
+          <div><strong>Размер бассейна:</strong> 6×10 м</div>
+          <div><strong>Глубина для взрослых:</strong> 1 м 45 см</div>
+          <div><strong>Глубина для детей:</strong> 45 см</div>
+        </div>
+        
+        <p style="font-weight: 600; margin-top: 1.5rem;">Мы предлагаем нашим гостям:</p>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; margin: 0.5rem 0 1.5rem 0;">
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ гидромассаж двухструйный</li>
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ душ Шарко</li>
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ гейзер</li>
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ уличный душ</li>
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ шезлонги с матрасами</li>
+          <li style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem;">✦ полотенца</li>
+        </ul>
+        
+        <div style="background: #fef3c7; border-left: 4px solid #d4af37; padding: 0.75rem 1.25rem; border-radius: 0.5rem; margin: 1.5rem 0; font-size: 0.9rem; color: #92400e;">
+          <strong>ВАЖНО:</strong> ответственность за безопасность пользования бассейном несут гости!
+        </div>
+      </div>
+    `;
+  } else if (id === 2) {
+    content = `<p>ТЕКСТ ДЛЯ БАННОГО ЧАНА</p>`;
+  } else if (id === 3) {
+    content = `<p>ТЕКСТ ДЛЯ БАНИ НА ДРОВАХ</p>`;
+  } else if (id === 4) {
+    content = `<p>ТЕКСТ ДЛЯ КАРАОКЕ</p>`;
+  } else if (id === 5) {
+    content = `<p>ТЕКСТ ДЛЯ МАНГАЛА</p>`;
+  } else if (id === 6) {
+    content = `<p>ТЕКСТ ДЛЯ САПБОРДОВ</p>`;
+  } else {
+    content = `<p>${s.description}</p>`;
+  }
+  
+  document.getElementById('sm-desc').innerHTML = content;
   openM('svc-modal');
 }
 
