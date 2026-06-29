@@ -1291,8 +1291,34 @@ function openPoolModal(id) {
     </div>
   </div>
   `;
-  } else if (id === 4) {
-    content = `<p>ТЕКСТ ДЛЯ КАРАОКЕ</p>`;
+    } else if (id === 4) {
+    content = `
+      <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
+        <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
+          <style>
+            div[style*="overflow-x: auto"]::-webkit-scrollbar { height: 2px; }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 10px; }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb { background: #a4907c; border-radius: 10px; }
+            div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover { background: #8e7a68; }
+          </style>
+          <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+            <img src="images/караоке2.jpg" alt="Караоке 1" style="width:100%; display:block;">
+          </div>
+          <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+            <img src="images/караоке3.jpg" alt="Караоке 2" style="width:100%; display:block;">
+          </div>
+          <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+            <img src="images/караоке4.jpg" alt="Караоке 3" style="width:100%; display:block;">
+          </div>
+        </div>
+
+        <p>Помещение для караоке расположено на втором этаже над банным комплексом и имеет собственный выход на балкон, что идеально подходит для отдыха больших весёлых компаний.</p>
+        
+        <p>Репертуар караоке состоит из 50 тысяч песен. Он обновляется и еженедельно добавляется до 300–500 новых песен.</p>
+        
+        <p>Гостям мы предлагаем здесь большой вместительный диван, телевизор с диагональю 75 дюймов, современную акустическую систему, цветную иллюминацию, а для детей здесь оборудована игровая зона с аэрохоккеем.</p>
+      </div>
+    `;
   } else if (id === 5) {
     content = `<p>ТЕКСТ ДЛЯ МАНГАЛА</p>`;
   } else if (id === 6) {
