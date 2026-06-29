@@ -620,81 +620,17 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
     </div>
     <div class="booking-grid">
       <div class="form-panel">
-        <h3>✦ <span>Параметры проживания</span></h3>
-        <div id="form-wrap">
-          <div style="margin-bottom:1.5rem">
-            <label class="form-label">Выберите домик:</label>
-            <div class="cabin-sel-grid" id="cabin-sel"></div>
-          </div>
-          <div class="dates-grid" style="margin-bottom:1.5rem">
-            <div>
-              <label class="form-label">Дата заезда:</label>
-              <div class="inp-wrap">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <input type="date" class="inp" id="ci" value="2026-06-25" oninput="upd()">
-              </div>
-            </div>
-            <div>
-              <label class="form-label">Дата выезда:</label>
-              <div class="inp-wrap">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                <input type="date" class="inp" id="co" value="2026-06-28" oninput="upd()">
-              </div>
-            </div>
-          </div>
-          <div style="margin-bottom:1.5rem">
-            <label class="form-label">Количество гостей:</label>
-            <div class="inp-wrap">
-              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              <select class="inp" id="gs" oninput="upd()">
-                <option value="1">1 гость</option>
-                <option value="2" selected>2 гостя</option>
-                <option value="3">3 гостя</option>
-                <option value="4">4 гостя</option>
-              </select>
-            </div>
-          </div>
-          <div class="contact-sec">
-            <h4>Контактные данные для связи</h4>
-            <div class="contact-grid">
-              <input type="text" class="inp-plain" id="gname" placeholder="Ваше имя">
-              <input type="tel" class="inp-plain" id="gphone" placeholder="Номер телефона">
-            </div>
-            <button class="btn-submit" onclick="sub()">Отправить запрос на бронирование</button>
-            <div class="form-note" style="margin-top:.75rem"><p>* Готовы интегрировать ваш TravelLine / Bnovo / Яндекс widget. Предоставьте iframe код при финальной сдаче.</p></div>
-          </div>
-        </div>
-        <div class="booking-success" id="bsucc">
-          <div class="succ-icon">✓</div>
-          <h4>Запрос успешно отправлен!</h4>
-          <p id="succ-txt">Спасибо! Наш администратор свяжется с вами в течение 10 минут.</p>
-          <button class="btn-try" onclick="rst()">Забронировать еще раз</button>
-        </div>
-      </div>
-      <div class="summary">
-        <span class="sum-label">Ваш расчет:</span>
-        <h3>Детали брони</h3>
-        <div class="sum-row"><span>Домик:</span><span class="v" id="s-cabin">Белый амур</span></div>
-        <div class="sum-row"><span>Период проживания:</span><span class="v" id="s-nights">3 ночи</span></div>
-        <div class="sum-row"><span>Гости:</span><span class="v" id="s-guests">2 персоны</span></div>
-        <div class="sum-div"></div>
-        <div class="sum-sub">
-          <div class="r"><span>Базовая стоимость:</span><span id="s-base">42 000 ₽</span></div>
-          <div class="r disc" id="s-disc-row" style="display:none"><span>Спецскидка (15% от 3 ночей):</span><span id="s-disc">-6 300 ₽</span></div>
-        </div>
-        <div class="sum-total">
-          <div class="lbl">Итого к оплате:</div>
-          <div class="amt" id="s-total">35 700 ₽</div>
-        </div>
-        <div class="sum-gift">
-          <span style="font-size:1rem;flex-shrink:0">*</span>
-          <div>
-            <span class="gt">Чайный уголок - в подарок!</span>
-            <span class="gd">Каждому нашему гостю при заезде дарим душистый горный чай, баночку фермерского меда и домашнее варенье.</span>
-          </div>
-        </div>
-      </div>
-    </div>
+  <h3>✦ <span>Система бронирования</span></h3>
+  
+  <!-- ЗАГЛУШКА -->
+  <div style="background:#f5f5f4;border-radius:1rem;padding:2.5rem;text-align:center;border:2px dashed #d6d3d1;margin:1.5rem 0">
+    <p style="font-family:var(--serif);font-size:1.5rem;color:#a8a29e">📋 Система бронирования</p>
+    <p style="font-size:1rem;color:#78716c;margin-top:.75rem">Здесь будет размещён код виджета бронирования</p>
+    <p style="font-size:.8rem;color:#a8a29e;margin-top:.75rem;font-family:monospace">Ожидается интеграция с TravelLine / Bnovo / Яндекс</p>
+  </div>
+  <!-- КОНЕЦ ЗАГЛУШКИ -->
+  
+</div>
     <div class="plaques">
       <div class="plaque-warm">
         <span class="e">Подарок при заезде</span>
