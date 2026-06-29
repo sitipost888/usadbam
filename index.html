@@ -1141,49 +1141,42 @@ function openPoolModal(id) {
   
   if (id === 1) {
   content = `
-    <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
-        <style>
-          div[style*="overflow-x: auto"]::-webkit-scrollbar {
-            height: 2px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
-            background: #a4907c;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
-            background: #8e7a68;
-          }
-        </style>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-      </div>
+    <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
+  <style>
+    div[style*="overflow-x: auto"]::-webkit-scrollbar {
+      height: 2px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+      background: #a4907c;
+      border-radius: 10px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
+      background: #8e7a68;
+    }
+  </style>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас2.jpg" alt="Бассейн 1" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас3.jpg" alt="Бассейн 2" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас4.jpg" alt="Бассейн 3" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас5.jpg" alt="Бассейн 4" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас6.jpg" alt="Бассейн 5" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/бас7.jpg" alt="Бассейн 6" style="width:100%; display:block;">
+  </div>
+</div>
         
         <p>Все гости «Усадьбы Плавни» могут посещать наш бассейн с современной системой очистки и подогревом воды.</p>
         <p>Преимущества бассейна с подогревом – это удлинённый купальный сезон, возможность купаться не только в летний сезон, но и в прохладное время года. Это значит, что не нужно заранее планировать активность или ждать, когда вода прогреется.</p>
@@ -1213,33 +1206,30 @@ function openPoolModal(id) {
     `;
   } else if (id === 2) {
   content = `
-    <div style="font-size: 1rem; line-height: 1.8; color: #44403c;">
-      <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
-        <style>
-          div[style*="overflow-x: auto"]::-webkit-scrollbar {
-            height: 2px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
-            background: #f0f0f0;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
-            background: #a4907c;
-            border-radius: 10px;
-          }
-          div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
-            background: #8e7a68;
-          }
-        </style>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/чан3.jpg" alt="Банный чан 1" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-        <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden; position: relative;" onclick="this.querySelector('img').style.transform='scale(1.8)'; this.querySelector('.close-btn').style.display='flex'; this.style.zIndex='10'; this.style.overflow='visible';">
-          <img src="images/чан4.jpg" alt="Банный чан 2" style="width:100%; display:block; transition: transform 0.4s ease; border-radius:1rem;">
-          <span class="close-btn" onclick="event.stopPropagation(); this.parentElement.querySelector('img').style.transform='scale(1)'; this.style.display='none'; this.parentElement.style.zIndex='1';" style="display:none; position:absolute; top:-8px; right:-8px; font-size:20px; cursor:pointer; color:#fff; background:rgba(0,0,0,0.5); border-radius:50%; width:32px; height:32px; align-items:center; justify-content:center; font-weight:300; z-index:20; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.2);">✕</span>
-        </div>
-      </div>
+    <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
+  <style>
+    div[style*="overflow-x: auto"]::-webkit-scrollbar {
+      height: 2px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb {
+      background: #a4907c;
+      border-radius: 10px;
+    }
+    div[style*="overflow-x: auto"]::-webkit-scrollbar-thumb:hover {
+      background: #8e7a68;
+    }
+  </style>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/чан3.jpg" alt="Банный чан 1" style="width:100%; display:block;">
+  </div>
+  <div style="flex: 0 0 45%; max-width: 45%; scroll-snap-align: start; border-radius: 1rem; overflow: hidden;">
+    <img src="images/чан4.jpg" alt="Банный чан 2" style="width:100%; display:block;">
+  </div>
+</div>
 
       <p>Нашим гостям мы предлагаем оздоровительный банный чан на дровах с живительной водой. На удобных сиденьях может разместиться компания до 4 человек.</p>
       
