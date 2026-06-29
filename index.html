@@ -1024,21 +1024,6 @@ services.forEach(s => {
   `;
 });
 
-function openSvc(id) {
-  const s = services.find(x => x.id === id);
-  document.getElementById('sm-img').src = s.image;
-  document.getElementById('sm-title').textContent = s.name;
-  document.getElementById('sm-desc').textContent = s.description;
-  const q = document.getElementById('sm-quote');
-  if (s.quote) {
-    q.textContent = s.quote;
-    q.style.display = 'block';
-  } else {
-    q.style.display = 'none';
-  }
-  document.getElementById('sm-specs').innerHTML = s.specs.map(sp => `<li class="modal-spec"><span class="spec-dot"></span><span>${sp}</span></li>`).join('');
-  openM('svc-modal');
-}
 
 // RENDER REVIEWS
 const rs=document.getElementById('rs');
