@@ -711,7 +711,28 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       <span class="eyebrow eyebrow-warm">Наше расположение</span>
       <h2>Карта и виртуальный тур</h2>
     </div>
+
     <div class="map-grid">
+      <!-- ===== КАРТА (слева) ===== -->
+      <div class="map-card">
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <div>
+              <h3>Мы всего в часе езды от Архыза и в двух часах езды от Ставрополя</h3>
+            </div>
+            <div class="map-badge">43.979055° N, 41.540890° E</div>
+          </div>
+        </div>
+        <iframe 
+          src="https://yandex.ru/map-widget/v1/?ll=41.540890%2C43.979055&z=16&pt=41.540890%2C43.979055" 
+          width="100%" 
+          height="400" 
+          frameborder="0" 
+          allowfullscreen="true">
+        </iframe>
+      </div>
+
+      <!-- ===== ВИРТУАЛЬНЫЙ ТУР (справа) ===== -->
       <div class="map-card">
         <div>
           <span class="ce">Интерактивный опыт</span>
@@ -719,59 +740,18 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
           <p>Прогуляйтесь по ухоженной территории Усадьбы Плавни и загляните внутрь наших домиков с панорамными окнами прямо со своего экрана.</p>
         </div>
         <div class="tour-player">
-          <div class="tour-prev" id="tp" onclick="startTour()">
-            <div class="tour-prev-bg" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80')"></div>
-            <button class="tour-play">▶</button>
-            <span class="tour-play-lbl">Запустить 3D прогулку</span>
-          </div>
-          <div id="ta" style="display:none;position:absolute;inset:0;background:#000;border-radius:1rem">
-            <div style="position:absolute;inset:0;overflow:hidden">
-              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1600&q=80" alt="Панорама" style="width:200%;height:100%;object-fit:cover;filter:brightness(.7);animation:panorama 30s linear infinite" loading="lazy">
-            </div>
-            <div style="position:absolute;inset:0;background:rgba(0,0,0,.2)"></div>
-            <div style="position:absolute;top:1rem;left:1rem;right:1rem;display:flex;justify-content:space-between;align-items:center;z-index:5">
-              <span style="background:#22c55e;color:#fff;font-size:9px;font-family:monospace;font-weight:700;padding:.25rem .75rem;border-radius:9999px;text-transform:uppercase">● Панорама 360° • Гостиная</span>
-              <button onclick="stopTour()" style="font-size:11px;text-transform:uppercase;letter-spacing:.1em;font-weight:600;color:#fff;background:rgba(255,255,255,.2);padding:.25rem .75rem;border-radius:9999px;border:none;cursor:pointer">Выйти</button>
-            </div>
-            <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;text-align:center;z-index:5">
-              <a href="https://yandex.ru/maps/org/usadba_plavni/74173296214/gallery/?tab=panoramas" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:.375rem;padding:.5rem 1rem;background:var(--warm);color:#fff;font-size:10px;font-family:monospace;text-transform:uppercase;font-weight:700;border-radius:9999px;text-decoration:none">Открыть реальный 3D-тур на Яндекс ▶</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="map-card">
-        <div>
-          <div style="display:flex;justify-content:space-between;align-items:flex-start">
-            <div>
-              <span class="ce">Наше местоположение</span>
-              <h3>Горы Карачаево-Черкессии</h3>
-            </div>
-            <div class="map-badge"> 43.7955° N, 41.2721° E</div>
-          </div>
-          <p>Мы находимся в уединенном и живописном ущелье Карачаево-Черкессии, окруженном величественными вершинами Кавказа и вековыми хвойными лесами.</p>
-        </div>
-        <div class="map-frame">
-          <iframe src="https://yandex.ru/map-widget/v1/?oid=74173296214" allowfullscreen></iframe>
+          <iframe 
+            src="https://yandex.ru/map-widget/v1/?from=api-maps&l=stv%2Csta&ll=38.932598%2C45.020131&origin=jsapi_2.1.79&panorama%5Bdirection%5D=261.000000%2C2.600000&panorama%5Bfull%5D=true&panorama%5Bpoint%5D=41.540708%2C43.978406&panorama%5Bspan%5D=120.096961%2C60.000000&z=14" 
+            width="100%" 
+            height="400" 
+            frameborder="0" 
+            allowfullscreen="true">
+          </iframe>
         </div>
       </div>
     </div>
-    <div class="dir-grid">
-      <div class="dir-card">
-        <span class="de">Из Минеральных Вод</span>
-        <p class="dt">Около 210 км • 2.5 часа</p>
-        <p class="dd">Двигайтесь из аэропорта по трассе А-156 в направлении Черкесска, затем по живописной горной дороге в сторону Архыза до указателя к Усадьбе Плавни.</p>
-      </div>
-      <div class="dir-card">
-        <span class="de">Из Ставрополя</span>
-        <p class="dt">Около 230 км • 3 часа</p>
-        <p class="dd">Следуйте на юг через Невинномысск и Черкесск по направлению к Карачаевску и горным перевалам, наслаждаясь панорамными видами Кавказского хребта.</p>
-      </div>
-      <div class="dir-card">
-        <span class="de">Навигатору на заметку</span>
-        <p class="dt">Координаты в навигатор</p>
-        <p class="dd">Просто введите в Яндекс.Навигатор запрос <span style="color:var(--warm);font-weight:500">«Усадьба Плавни»</span> или точные координаты: <span style="color:var(--warm);font-weight:500">43.795521, 41.272120</span>. Дорога полностью асфальтирована.</p>
-      </div>
-    </div>
+
+    <!-- ===== ФИНАЛ ===== -->
     <div class="map-finale">
       <p>«Приезжайте, здесь тихо, зелено и не нужно никуда спешить.»</p>
       <button class="btn-warm" onclick="goto('booking')">Забронировать отдых</button>
