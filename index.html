@@ -373,7 +373,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
 /* MODALS */
 .modal{position:fixed;inset:0;background:rgba(12,10,9,.6);backdrop-filter:blur(6px);z-index:100;display:none;align-items:center;justify-content:center;padding:1rem;overflow-y:auto}
 .modal.open{display:flex}
-.modal-box{background:var(--cream);border-radius:2rem;overflow:hidden;border:1px solid #e7e5e4;z-index:101;width:100%;max-width:36rem;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.25);margin:2rem auto}
+.modal-box{background:var(--cream);border-radius:2rem;overflow:hidden;border:1px solid #e7e5e4;z-index:101;width:100%;max-width:28rem;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.25);margin:2rem auto}
 .modal-close{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(28,25,23,.5);color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s;font-size:1rem}
 .modal-close:hover{background:#1c1917}
 .modal-cover{height:14rem;position:relative}
@@ -1017,8 +1017,8 @@ services.forEach(s => {
         <p class="desc">${s.description}</p>
         ${s.quote ? `<p class="quote">${s.quote}</p>` : ''}
       </div>
-      <button class="svc-more" onclick="${s.id === 1 ? 'openPoolModal()' : 'openSvc(' + s.id + ')'}">
-        Подробнее →
+      <button class="svc-more" onclick="openServiceModal(${s.id})">
+        Подробнее о характеристиках →
       </button>
     </div>
   `;
@@ -1221,6 +1221,31 @@ if (imgContainer) imgContainer.parentElement.remove();
     </div>
   `;
   
+  openM('svc-modal');
+}
+// ==== ОБЩАЯ КАСТОМНАЯ МОДАЛКА ДЛЯ ВСЕХ УСЛУГ ====
+function openServiceModal(id) {
+  const s = services.find(x => x.id === id);
+  if (!s) return;
+  
+  document.getElementById('sm-title').textContent = s.name;
+  document.getElementById('sm-quote').style.display = 'none';
+  document.getElementById('sm-specs').style.display = 'none';
+  
+  const imgContainer = document.getElementById('sm-img');
+  if (imgContainer) imgContainer.parentElement.remove();
+  
+  const lbl = document.querySelector('.modal-sec-lbl');
+  if (lbl) lbl.style.display = 'none';
+  
+  let content = '';
+  if (id === 1) {
+    content = `... ваш контент для бассейна ...`;
+  } else {
+    content = `<p>${s.description}</p>`;
+  }
+  
+  document.getElementById('sm-desc').innerHTML = content;
   openM('svc-modal');
 }
 // Close modal on overlay click
