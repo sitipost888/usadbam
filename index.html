@@ -938,7 +938,7 @@ const services = [
     name: "Мангальная зона",
     description: "Персональная мангальная зона у каждого домика, оснащенная всем необходимым и теплым освещением.",
     quote: "«Персональная зона - шикарно» - говорят гости.",
-    image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
+    image: "images/мангал.jpg",
     specs: ["Индивидуальный мангал","Уголь и розжиг","Тёплое освещение","Бесплатно"]
   },
   {
@@ -946,7 +946,7 @@ const services = [
     name: "Сапборды и рыбалка",
     description: "Увлекательные неспешные прогулки по воде на SUP-бордах или тихое умиротворяющее утро с удочкой.",
     quote: "«Тишина на озере завораживает» - говорят гости.",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+    image: "images/сапборд.jpg",
     specs: ["Широкие устойчивые SUP-борды","Жилеты включены","Удочки и снасти","Пруд на территории"]
   }
 ];
@@ -1015,6 +1015,9 @@ scenarios.forEach(s=>{
 // RENDER SERVICES
 const sg = document.getElementById('svc-grid');
 services.forEach(s => {
+  // Убираем кнопку для мангала (id: 5) и рыбалки (id: 6)
+  const showButton = s.id !== 5 && s.id !== 6;
+  
   sg.innerHTML += `
     <div class="svc-card">
       <div>
@@ -1022,9 +1025,8 @@ services.forEach(s => {
         <h3>${s.name}</h3>
         <p class="desc">${s.description}</p>
         ${s.quote ? `<p class="quote">${s.quote}</p>` : ''}
-      </div><button class="svc-more" onclick="openPoolModal(${s.id})">
-        Подробнее →
-      </button>
+      </div>
+      ${showButton ? `<button class="svc-more" onclick="openPoolModal(${s.id})">Подробнее →</button>` : ''}
     </div>
   `;
 });
