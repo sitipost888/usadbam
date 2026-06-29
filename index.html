@@ -1126,6 +1126,8 @@ function stopTour(){document.getElementById('ta').style.display='none';document.
 function openPoolModal(id) {
   const s = services.find(x => x.id === id);
   if (!s) return;
+
+  closeM('svc-modal');
   
   document.getElementById('sm-title').textContent = s.name;
   document.getElementById('sm-quote').style.display = 'none';
