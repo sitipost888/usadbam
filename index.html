@@ -1034,55 +1034,85 @@ function openCabin(id){
 }
 renderCabins();
 
-// BOOKING
+// BOOKING (временно отключено, пока нет формы)
 const cabinSelEl = document.getElementById('cabin-sel');
 if (cabinSelEl) {
-  cabins.forEach(c=>{
-    const el=document.createElement('div');
-    el.className='cabin-opt'+(c.id===selCabin?' sel':'');
-    el.innerHTML=`<span class="cn">${c.name}</span><span class="cc">${c.capacity}</span>`;
-    el.onclick=()=>{
-      selCabin=c.id;
-      document.querySelectorAll('.cabin-opt').forEach(x=>x.classList.remove('sel'));
+  // Код активен только если есть элемент #cabin-sel
+  cabins.forEach(c => {
+    const el = document.createElement('div');
+    el.className = 'cabin-opt' + (c.id === selCabin ? ' sel' : '');
+    el.innerHTML = `<span class="cn">${c.name}</span><span class="cc">${c.capacity}</span>`;
+    el.onclick = () => {
+      selCabin = c.id;
+      document.querySelectorAll('.cabin-opt').forEach(x => x.classList.remove('sel'));
       el.classList.add('sel');
       upd();
     };
     cabinSelEl.appendChild(el);
   });
 }
-function upd(){
-  if(!document.getElementById('ci')) return;
-  const c=cabins.find(x=>x.id===selCabin);
-  const ci=document.getElementById('ci').value;
-  const co=document.getElementById('co').value;
-  const g=parseInt(document.getElementById('gs').value)||2;
-  const n=Math.max(1,Math.ceil((new Date(co)-new Date(ci))/(86400000)));
-  const base=c.pw*n;const ad=n>=3;const disc=ad?Math.round(base*.15):0;const total=base-disc;
-  const ns=n===1?'ночь':n<5?'ночи':'ночей';
-  const gs=g===1?'персона':g<5?'персоны':'персон';
-  document.getElementById('s-cabin').textContent=c.name;
-  document.getElementById('s-nights').textContent=n+' '+ns;
-  document.getElementById('s-guests').textContent=g+' '+gs;
-  document.getElementById('s-base').textContent=base.toLocaleString()+' ₽';
-  const dr=document.getElementById('s-disc-row');
-  if(ad){dr.style.display='flex';document.getElementById('s-disc').textContent='-'+disc.toLocaleString()+' ₽';}else dr.style.display='none';
-  document.getElementById('s-total').textContent=total.toLocaleString()+' ₽';
-}
-upd();
-function sub(){
-  const nm=document.getElementById('gname').value.trim();
-  const ph=document.getElementById('gphone').value.trim();
-  if(!nm||!ph){alert('Пожалуйста, заполните имя и номер телефона');return;}
-  document.getElementById('form-wrap').style.display='none';
-  const s=document.getElementById('bsucc');s.classList.add('show');
-  document.getElementById('succ-txt').innerHTML=`Спасибо, ${nm}! Наш администратор свяжется с вами по номеру <strong>${ph}</strong> в течение 10 минут для подтверждения бронирования.`;
-}
-function rst(){
-  document.getElementById('form-wrap').style.display='block';
-  document.getElementById('bsucc').classList.remove('show');
-  document.getElementById('gname').value='';document.getElementById('gphone').value='';
+
+// Функция обновления с проверкой существования элементов
+function upd() {
+  // Проверяем, что все элементы формы существуют
+  const ci = document.getElementById('ci');
+  const co = document.getElementById('co');
+  const gs = document.getElementById('gs');
+  const sCabin = document.getElementById('s-cabin');
+  const sNights = document.getElementById('s-nights');
+  const sGuests = document.getElementById('s-guests');
+  const sBase = document.getElementById('s-base');
+  const sDiscRow = document.getElementById('s-disc-row');
+  const sDisc = document.getElementById('s-disc');
+  const sTotal = document.getElementById('s-total');
+  
+  // Если хотя бы одного элемента нет — выходим (форма временно отключена)
+  if (!ci || !co || !gs || !sCabin || !sNights || !sGuests || !sBase || !sDiscRow || !sDisc || !sTotal) {
+    console.warn('⚠️ Форма бронирования временно отключена (заглушка)');
+    return;
+  }
+  
+  // Если все элементы есть — выполняем расчёт
+  const c = cabins.find(x => x.id === selCabin);
+  if (!c) return;
+  
+  const n = Math.max(1, Math.ceil((new Date(co.value) - new Date(ci.value)) / 86400000));
+  const g = parseInt(gs.value) || 2;
+  const base = c.pw * n;
+  const ad = n >= 3;
+  const disc = ad ? Math.round(base * 0.15) : 0;
+  const total = base - disc;
+  const ns = n === 1 ? 'ночь' : n < 5 ? 'ночи' : 'ночей';
+  const gsText = g === 1 ? 'персона' : g < 5 ? 'персоны' : 'персон';
+  
+  sCabin.textContent = c.name;
+  sNights.textContent = n + ' ' + ns;
+  sGuests.textContent = g + ' ' + gsText;
+  sBase.textContent = base.toLocaleString() + ' ₽';
+  
+  if (ad) {
+    sDiscRow.style.display = 'flex';
+    sDisc.textContent = '-' + disc.toLocaleString() + ' ₽';
+  } else {
+    sDiscRow.style.display = 'none';
+  }
+  sTotal.textContent = total.toLocaleString() + ' ₽';
 }
 
+// Остальные функции (sub, rst) оставляем как есть, но они тоже временно отключены
+function sub() {
+  const nm = document.getElementById('gname');
+  const ph = document.getElementById('gphone');
+  if (!nm || !ph) {
+    alert('Форма бронирования временно отключена. Скоро будет доступна!');
+    return;
+  }
+  // ... остальной код
+}
+
+function rst() {
+  // ... код
+}
 // RENDER CARE
 const careItems = [
     {title:"Парковка", description:"Удобная охраняемая парковка прямо на территории. Приехали - и забыли о машине до самого конца вашего беззаботного отдыха."},
@@ -1164,18 +1194,18 @@ function openPoolModal(id) {
 
   closeM('svc-modal');
   
-  document.getElementById('sm-title').textContent = s.name;
-  document.getElementById('sm-quote').style.display = 'none';
-  document.getElementById('sm-specs').style.display = 'none';
-  
-  const imgContainer = document.getElementById('sm-img');
-  if (imgContainer) imgContainer.parentElement.remove();
-  
-  const lbl = document.querySelector('.modal-sec-lbl');
-  if (lbl) lbl.style.display = 'none';
-  
-  let content = '';
-  
+document.getElementById('sm-title').textContent = s.name;
+document.getElementById('sm-quote').style.display = 'none';
+document.getElementById('sm-specs').style.display = 'none';
+
+// Картинку НЕ УДАЛЯЕМ, просто очищаем src
+const smImg = document.getElementById('sm-img');
+if (smImg) smImg.src = '';
+
+const lbl = document.querySelector('.modal-sec-lbl');
+if (lbl) lbl.style.display = 'none';
+
+let content = '';
   if (id === 1) {
   content = `
     <div style="display: flex; gap: 1rem; overflow-x: auto; padding: 0.5rem 0.2rem 1rem 0.2rem; margin-bottom: 1.5rem; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: #a4907c #f0f0f0;">
