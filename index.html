@@ -1016,8 +1016,7 @@ services.forEach(s => {
         <h3>${s.name}</h3>
         <p class="desc">${s.description}</p>
         ${s.quote ? `<p class="quote">${s.quote}</p>` : ''}
-      </div>
-      <button class="svc-more" onclick="openServiceModal(${s.id})">
+      </div><button class="svc-more" onclick="openPoolModal(${s.id})">
         Подробнее →
       </button>
     </div>
