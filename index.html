@@ -1367,6 +1367,73 @@ function openPoolModal(id) {
 ['svc-modal','cabin-modal','price-modal'].forEach(id=>{
   document.getElementById(id).addEventListener('click',function(e){if(e.target===this)closeM(id)});
 });
+  console.log('✅ Все блоки восстановлены: Детали и забота, Прайс-лист, Вопросы и ответы, Модалки услуг');
+
+// ===== РЕНДЕРИНГ CARE (Детали и забота) =====
+const careItems = [
+    {title:"Парковка", description:"Удобная охраняемая парковка прямо на территории. Приехали - и забыли о машине до самого конца вашего беззаботного отдыха."},
+    {title:"Ускоренная регистрация заезда и отъезда", description:"Никаких очередей, долгих бумаг и задержек. Вы заезжаете максимально быстро и выезжаете без лишних хлопот."},
+    {title:"Прачечная", description:"Если во время длительного загородного отдыха вам понадобится стирка - у нас есть полноценная прачечная, вам не придется думать о быте."},
+    {title:"Настольные игры и аэрохоккей", description:"Всё для уютного и запоминающегося вечера в компании близких людей в теплом деревянном интерьере."},
+    {title:"Шезлонги", description:"Удобные эргономичные шезлонги с мягкими матрасами установлены у подогреваемого бассейна и на личных террасах ваших домиков."},
+    {title:"Способы оплаты", description:"Мы принимаем наличные, банковские карты и прямые переводы на расчетный счет. Оплачивайте так, как удобно именно вам."},
+    {title:"Электрокар", description:"Бесшумный и экологичный электрокар для комфортных прогулок или быстрой перевозки багажа по нашей ухоженной территории."}
+];
+
+const cg2 = document.getElementById('care-grid');
+if (cg2) {
+    cg2.innerHTML = '';
+    careItems.forEach(item => {
+        cg2.innerHTML += `
+            <div class="care-card">
+                <div>
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+                <div class="care-foot">
+                    <span>Усадьба Плавни</span>
+                    <span class="inc">Включено в отдых</span>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// ===== РЕНДЕРИНГ PRICE TABLE (Прайс-лист) =====
+const priceList = [
+    {service:"Аренда банного чана (сеанс 3 ч)", price:"5 000 руб", note:"Именинникам от 2 ночей бесплатно!"},
+    {service:"Аренда русской бани (сеанс 2 ч)", price:"4 000 руб", note:"Веники и чай включены"},
+    {service:"Аренда караоке-зала (в час)", price:"1 500 руб", note:"Без ограничений по громкости"},
+    {service:"Пользование бассейном", price:"Бесплатно", note:"Входит в стоимость проживания"},
+    {service:"Аренда SUP-борда (в час)", price:"800 руб", note:"Инструктаж и жилет включены"},
+    {service:"Фермерский завтрак", price:"500 руб", note:"Заказывается с вечера"},
+    {service:"Аренда удочек (на день)", price:"1 000 руб", note:""}
+];
+
+const priceTable = document.getElementById('price-tbl');
+if (priceTable) {
+    priceTable.innerHTML = `
+        <thead>
+            <tr>
+                <th>Услуга / Размещение</th>
+                <th style="text-align:right">Стоимость</th>
+                <th style="text-align:right;padding-left:1.5rem">Примечание</th>
+            </tr>
+        </thead>
+        <tbody>
+            ${priceList.map(p => `
+                <tr>
+                    <td>${p.service}</td>
+                    <td style="text-align:right">${p.price}</td>
+                    <td style="text-align:right;padding-left:1.5rem;font-style:italic;color:#a8a29e">${p.note || '-'}</td>
+                </tr>
+            `).join('')}
+        </tbody>
+    `;
+}
+
+console.log('✅ Блоки "Детали и забота" и "Прайс-лист" восстановлены!');
+
 </script>
 </body>
 </html>
