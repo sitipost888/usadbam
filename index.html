@@ -998,7 +998,13 @@ const faqs=[
 function goto(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
 function hs(id,amt){document.getElementById(id)?.scrollBy({left:amt,behavior:'smooth'})}
 function openM(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden'}
-function closeM(id){document.getElementById(id).classList.remove('open');document.body.style.overflow=''}
+function closeM(id){
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+  document.getElementById('sm-desc').innerHTML = '';
+  document.getElementById('sm-img').src = '';
+  document.getElementById('sm-title').textContent = '';
+}
 
 // RENDER SCENARIOS
 const ss=document.getElementById('ss');
