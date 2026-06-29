@@ -1116,15 +1116,30 @@ careItems.forEach(item=>{
 document.getElementById('price-tbl').innerHTML=`<thead><tr><th>Услуга / Размещение</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-left:1.5rem">Примечание</th></tr></thead><tbody>${priceList.map(p=>`<tr><td>${p.service}</td><td>${p.price}</td><td>${p.note||'-'}</td></tr>`).join('')}</tbody>`;
 
 // RENDER FAQ
-let openFaq=1;
+let openFaq = 1;
 function renderFaq(){
-  const fl=document.getElementById('faq-list');fl.innerHTML='';
-  faqs.forEach(f=>{
-    const o=openFaq===f.id;
-    fl.innerHTML+=`<div class="faq-item"><button class="faq-trigger" onclick="toggleFaq(${f.id})"><span>${f.q}</span><div class="faq-ind${o?' open':''}">${o?'−':'+'}</div></button><div class="faq-answer${o?' open':''}"><div class="faq-answer-inner">${f.a}</div></div></div>`;
+  const fl = document.getElementById('faq-list');
+  if (!fl) return;
+  fl.innerHTML = '';
+  faqs.forEach(f => {
+    const o = openFaq === f.id;
+    fl.innerHTML += `
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(${f.id})">
+          <span>${f.q}</span>
+          <div class="faq-ind${o ? ' open' : ''}">${o ? '−' : '+'}</div>
+        </button>
+        <div class="faq-answer${o ? ' open' : ''}">
+          <div class="faq-answer-inner">${f.a}</div>
+        </div>
+      </div>
+    `;
   });
 }
-function toggleFaq(id){openFaq=openFaq===id?null:id;renderFaq()}
+function toggleFaq(id){
+  openFaq = openFaq === id ? null : id;
+  renderFaq();
+}
 renderFaq();
 
 // TOUR
