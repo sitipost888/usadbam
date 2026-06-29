@@ -1106,8 +1106,6 @@ const priceList = [
 // ===== ПОТОМ РЕНДЕРИНГ =====
 // RENDER PRICE TABLE
 document.getElementById('price-tbl').innerHTML=`<thead><tr><th>Услуга / Размещение</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-left:1.5rem">Примечание</th></tr></thead><tbody>${priceList.map(p=>`<tr><td>${p.service}</td><td>${p.price}</td><td>${p.note||'-'}</td></tr>`).join('')}</tbody>`;
-// RENDER PRICE TABLE
-document.getElementById('price-tbl').innerHTML=`<thead><tr><th>Услуга / Размещение</th><th style="text-align:right">Стоимость</th><th style="text-align:right;padding-left:1.5rem">Примечание</th></tr></thead><tbody>${priceList.map(p=>`<tr><td>${p.service}</td><td>${p.price}</td><td>${p.note||'-'}</td></tr>`).join('')}</tbody>`;
 
 // RENDER FAQ
 const faqs = [
