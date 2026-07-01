@@ -656,7 +656,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
         <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
           <source src="images/огонь.mp4" type="video/mp4">
         </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
             <polygon points="5,3 19,12 5,21" />
           </svg>
@@ -684,7 +684,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
         <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
           <source src="images/территория.mp4" type="video/mp4">
         </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
             <polygon points="5,3 19,12 5,21" />
           </svg>
@@ -696,7 +696,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
         <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
           <source src="images/бассейн.mp4" type="video/mp4">
         </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
             <polygon points="5,3 19,12 5,21" />
           </svg>
@@ -1479,6 +1479,21 @@ let content = '';
 ['svc-modal','cabin-modal','price-modal'].forEach(id=>{
   document.getElementById(id).addEventListener('click',function(e){if(e.target===this)closeM(id)});
 });
+  // ===== ВКЛЮЧАЕМ/ВЫКЛЮЧАЕМ ВИДЕО ПО КЛИКУ =====
+document.querySelectorAll('.video-container').forEach(function(container) {
+  container.addEventListener('click', function() {
+    var video = this.querySelector('video');
+    var btn = this.querySelector('.play-btn');
+    if (video.paused) {
+      video.play();
+      btn.style.opacity = '0';
+    } else {
+      video.pause();
+      btn.style.opacity = '1';
+    }
+  });
+});
+
 </script>
 </body>
 </html>
