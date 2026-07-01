@@ -611,28 +611,28 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
     <div class="cabins-grid" id="cabins-grid"></div>
   </div>
 </section>
-  <!-- ===== АТМОСФЕРНЫЙ БЛОК ===== -->
-<div style="background:#EAE5DE;padding:4rem 0;">
+  <!-- ===== АТМОСФЕРНЫЙ БЛОК (АДАПТИВНЫЙ) ===== -->
+<div style="background:#EAE5DE;padding:2rem 0 3rem 0;">
 
   <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
 
-    <!-- ШАПКА: ФОТО ОЧАГА -->
-    <div style="position:relative;border-radius:1.5rem;overflow:hidden;margin-bottom:4rem;box-shadow:0 12px 40px rgba(0,0,0,0.06);">
-      <img src="images/очаг.jpg" alt="Вечер у очага" style="width:100%;display:block;height:400px;object-fit:cover;object-position:center;">
+    <!-- ШАПКА: ФОТО ОЧАГА (для мобильных — на всю ширину) -->
+    <div style="position:relative;overflow:hidden;margin:0 -1.5rem 3rem -1.5rem;height:320px;">
+      <img src="images/очаг.jpg" alt="Вечер у очага" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(30,23,20,0.5),transparent 50%);"></div>
-      <div style="position:absolute;bottom:2.5rem;left:2.5rem;">
-        <p style="font-family:var(--editorial);font-style:italic;font-size:2.2rem;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,0.25);margin:0;letter-spacing:-0.02em;">
+      <div style="position:absolute;bottom:2rem;left:1.5rem;right:1.5rem;">
+        <p style="font-family:var(--editorial);font-style:italic;font-size:1.8rem;color:#fff;text-shadow:0 2px 30px rgba(0,0,0,0.25);margin:0;letter-spacing:-0.02em;">
           Вечера, которые запоминаются
         </p>
       </div>
     </div>
 
-    <!-- ===== ШАХМАТКА С ВИДЕО ===== -->
+    <!-- ===== ВЕРТИКАЛЬНЫЙ ПОТОК (ДЛЯ ВСЕХ ЭКРАНОВ) ===== -->
 
     <!-- 1. ВИДЕО ОГНЯ -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem;">
+    <div style="margin-bottom:3rem;">
       <div onclick="this.querySelector('video').play()" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;">
-        <video loop muted playsinline style="width:100%;display:block;height:320px;object-fit:cover;">
+        <video loop muted playsinline style="width:100%;display:block;height:auto;aspect-ratio:16/9;object-fit:cover;">
           <source src="images/огонь.mp4" type="video/mp4">
         </video>
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
@@ -641,28 +641,18 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
           </div>
         </div>
       </div>
-      <div>
-        <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
-          Живой огонь
-        </p>
-        <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
-          Треск дров, мягкий свет и тишина вокруг. Вечер у костра — это маленькое счастье, которое остаётся с вами надолго.
-        </p>
-      </div>
+      <p style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:1rem 0 0.3rem 0;letter-spacing:-0.02em;">
+        Живой огонь
+      </p>
+      <p style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
+        Треск дров, мягкий свет и тишина вокруг. Вечер у костра — это маленькое счастье, которое остаётся с вами надолго.
+      </p>
     </div>
 
     <!-- 2. ВИДЕО УСАДЬБЫ -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:3.5rem;">
-      <div>
-        <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
-          Вечерняя усадьба
-        </p>
-        <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
-          Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать этим воздухом.
-        </p>
-      </div>
+    <div style="margin-bottom:3rem;">
       <div onclick="this.querySelector('video').play()" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;">
-        <video loop muted playsinline style="width:100%;display:block;height:320px;object-fit:cover;">
+        <video loop muted playsinline style="width:100%;display:block;height:auto;aspect-ratio:16/9;object-fit:cover;">
           <source src="images/территория.mp4" type="video/mp4">
         </video>
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
@@ -671,12 +661,18 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
           </div>
         </div>
       </div>
+      <p style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:1rem 0 0.3rem 0;letter-spacing:-0.02em;">
+        Вечерняя усадьба
+      </p>
+      <p style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
+        Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать этим воздухом.
+      </p>
     </div>
 
     <!-- 3. ВИДЕО БАССЕЙНА -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+    <div>
       <div onclick="this.querySelector('video').play()" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;">
-        <video loop muted playsinline style="width:100%;display:block;height:320px;object-fit:cover;">
+        <video loop muted playsinline style="width:100%;display:block;height:auto;aspect-ratio:16/9;object-fit:cover;">
           <source src="images/бассейн.mp4" type="video/mp4">
         </video>
         <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;">
@@ -685,14 +681,12 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
           </div>
         </div>
       </div>
-      <div>
-        <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
-          Вечерний бассейн
-        </p>
-        <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
-          Вода, свет и горы на закате. Идеальное завершение дня в Усадьбе Плавни.
-        </p>
-      </div>
+      <p style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:1rem 0 0.3rem 0;letter-spacing:-0.02em;">
+        Вечерний бассейн
+      </p>
+      <p style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
+        Вода, свет и горы на закате. Идеальное завершение дня в Усадьбе Плавни.
+      </p>
     </div>
 
   </div>
