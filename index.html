@@ -20,7 +20,7 @@
   --dark:#1e1714;
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:var(--sans);background:var(--dark);color:#1c1917;overflow-x:hidden;-webkit-font-smoothing:antialiased;user-select:none}
+body{font-family:var(--sans);background:var(--dark);color:#1c1917;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-thumb{background:#d6d3d1;border-radius:3px}
 img{display:block;max-width:100%}
 button{cursor:pointer;font-family:var(--sans)}
@@ -477,7 +477,13 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
-}
+  }
+  .video-grid > div {
+    order: 2 !important; /* текст после видео */
+  }
+  .video-grid > .video-container {
+    order: 1 !important; /* видео перед текстом */
+  }
 }
 </style>
 </head>
@@ -653,16 +659,15 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
 
       <!-- 1. ВИДЕО ОГНЯ (слева) + ТЕКСТ (справа) -->
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:end;">
-        <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-          <source src="images/огонь.mp4" type="video/mp4">
-        </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-            <polygon points="5,3 19,12 5,21" />
-          </svg>
-        </div>
-      </div>
-      <div>
+  <video autoplay loop muted playsinline poster="images/очаг.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+    <source src="images/огонь.mp4" type="video/mp4">
+  </video>
+  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+      <polygon points="5,3 19,12 5,21" />
+    </svg>
+  </div>
+</div>
         <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
           Живой огонь
         </p>
@@ -681,28 +686,27 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
         </p>
       </div>
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:start;">
-        <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-          <source src="images/территория.mp4" type="video/mp4">
-        </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-            <polygon points="5,3 19,12 5,21" />
-          </svg>
-        </div>
-      </div>
+  <video autoplay loop muted playsinline poster="images/очаг.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+    <source src="images/территория.mp4" type="video/mp4">
+  </video>
+  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+      <polygon points="5,3 19,12 5,21" />
+    </svg>
+  </div>
+</div>
 
       <!-- 3. ВИДЕО БАССЕЙНА (слева) + ТЕКСТ (справа) -->
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:end;">
-        <video loop muted playsinline style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-          <source src="images/бассейн.mp4" type="video/mp4">
-        </video>
-        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-            <polygon points="5,3 19,12 5,21" />
-          </svg>
-        </div>
-      </div>
-      <div>
+  <video autoplay loop muted playsinline poster="images/очаг.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+    <source src="images/бассейн.mp4" type="video/mp4">
+  </video>
+  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+      <polygon points="5,3 19,12 5,21" />
+    </svg>
+  </div>
+</div>
         <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
           Вечерний бассейн
         </p>
