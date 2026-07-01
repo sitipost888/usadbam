@@ -462,7 +462,8 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
   .h2-muted{font-size:2.2rem}
   .map-finale p{font-size:2rem}
 }
- /* ===== МОБИЛЬНАЯ ВЕРСИЯ АТМОСФЕРНОГО БЛОКА ===== */
+
+/* МОБИЛЬНАЯ ВЕРСИЯ — БЕЗ ORDER */
 @media (max-width: 768px) {
   .video-grid {
     display: flex !important;
@@ -475,7 +476,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
   .video-container video {
     aspect-ratio: 1/1 !important;
     width: 100% !important;
-    height: 280px !important;
+    height: 350px !important;
     object-fit: cover !important;
   }
 }
@@ -671,14 +672,6 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       </div>
 
       <!-- 2. ТЕКСТ (слева) + ВИДЕО УСАДЬБЫ (справа) -->
-      <div>
-        <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
-          Вечерняя усадьба
-        </p>
-        <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
-          Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать.
-        </p>
-      </div>
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:start;">
   <video loop muted playsinline poster="images/территория.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
     <source src="images/территория.mp4" type="video/mp4">
@@ -688,6 +681,14 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       <polygon points="5,3 19,12 5,21" />
     </svg>
   </div>
+</div>
+<div>
+  <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
+    Вечерняя усадьба
+  </p>
+  <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
+    Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать.
+  </p>
 </div>
 
       <!-- 3. ВИДЕО БАССЕЙНА (слева) + ТЕКСТ (справа) -->
