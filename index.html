@@ -584,7 +584,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
     </div>
   </div>
 </section>
-  <!-- ===== АТМОСФЕРНЫЙ БЛОК (АДАПТИВНЫЙ) ===== -->
+  <!-- ===== АТМОСФЕРНЫЙ БЛОК ===== -->
 <div style="background:#FAF9F5;padding:4rem 0;">
 
   <div style="max-width:1100px;margin:0 auto;padding:0 1.5rem;">
@@ -600,67 +600,51 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       </div>
     </div>
 
-    <!-- ===== ВЕРТИКАЛЬНЫЙ ПОТОК (РАБОТАЕТ НА ВСЕХ ЭКРАНАХ) ===== -->
-    <div class="video-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;">
+    <!-- ТРИ ВИДЕО -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;">
 
       <!-- ВИДЕО 1: ОГОНЬ -->
-      <div class="video-item">
-        <div style="position:relative;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;cursor:pointer;">
-          <video loop muted playsinline style="width:100%;display:block;height:300px;object-fit:cover;">
+      <div>
+        <div style="border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;">
+          <video loop muted playsinline style="width:100%;display:block;height:240px;object-fit:cover;">
             <source src="images/огонь.mp4" type="video/mp4">
           </video>
-          <!-- КНОПКА PLAY -->
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.3);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21" /></svg>
-            </div>
-          </div>
         </div>
-        <p class="caption" style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.02em;">
+        <p style="font-family:var(--serif);font-size:1.2rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.01em;">
           Живой огонь
         </p>
-        <p class="desc" style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
-          Треск дров, мягкий свет и тишина вокруг. Вечер у костра — это маленькое счастье, которое остаётся с вами надолго.
+        <p style="font-family:var(--sans);font-size:0.8rem;color:#a8a29e;font-weight:300;margin:0;text-transform:uppercase;letter-spacing:0.05em;">
+          Костер
         </p>
       </div>
 
       <!-- ВИДЕО 2: УСАДЬБА -->
-      <div class="video-item">
-        <div style="position:relative;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;cursor:pointer;">
-          <video loop muted playsinline style="width:100%;display:block;height:300px;object-fit:cover;">
+      <div>
+        <div style="border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;">
+          <video loop muted playsinline style="width:100%;display:block;height:240px;object-fit:cover;">
             <source src="images/территория.mp4" type="video/mp4">
           </video>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.3);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21" /></svg>
-            </div>
-          </div>
         </div>
-        <p class="caption" style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.02em;">
+        <p style="font-family:var(--serif);font-size:1.2rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.01em;">
           Вечерняя усадьба
         </p>
-        <p class="desc" style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
-          Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать этим воздухом.
+        <p style="font-family:var(--sans);font-size:0.8rem;color:#a8a29e;font-weight:300;margin:0;text-transform:uppercase;letter-spacing:0.05em;">
+          Закат
         </p>
       </div>
 
       <!-- ВИДЕО 3: БАССЕЙН -->
-      <div class="video-item">
-        <div style="position:relative;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;cursor:pointer;">
-          <video loop muted playsinline style="width:100%;display:block;height:300px;object-fit:cover;">
+      <div>
+        <div style="border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;">
+          <video loop muted playsinline style="width:100%;display:block;height:240px;object-fit:cover;">
             <source src="images/бассейн.mp4" type="video/mp4">
           </video>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;transition:opacity 0.3s;">
-            <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.25);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.3);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21" /></svg>
-            </div>
-          </div>
         </div>
-        <p class="caption" style="font-family:var(--serif);font-size:1.6rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.02em;">
+        <p style="font-family:var(--serif);font-size:1.2rem;color:#292524;margin:0.75rem 0 0.2rem 0;letter-spacing:-0.01em;">
           Вечерний бассейн
         </p>
-        <p class="desc" style="font-family:var(--sans);font-size:0.95rem;color:#78716c;font-weight:300;line-height:1.6;margin:0;">
-          Вода, свет и горы на закате. Идеальное завершение дня в Усадьбе Плавни.
+        <p style="font-family:var(--sans);font-size:0.8rem;color:#a8a29e;font-weight:300;margin:0;text-transform:uppercase;letter-spacing:0.05em;">
+          Свет
         </p>
       </div>
 
