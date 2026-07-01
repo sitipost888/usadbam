@@ -655,20 +655,22 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
 
   <div style="max-width:1200px;margin:0 auto;padding:0 1.5rem;">
 
-    <!-- ===== ШАХМАТКА (НА КОМПЕ) ===== -->
+     <!-- ===== ШАХМАТКА (НА КОМПЕ) ===== -->
+  <div style="display:none;">
     <div class="video-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
 
       <!-- 1. ВИДЕО ОГНЯ (слева) + ТЕКСТ (справа) -->
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:end;">
-  <video loop muted playsinline poster="images/очаг.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-    <source src="images/огонь.mp4" type="video/mp4">
-  </video>
-  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-      <polygon points="5,3 19,12 5,21" />
-    </svg>
-  </div>
-</div>
+        <video loop muted playsinline poster="images/очаг.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+          <source src="images/огонь.mp4" type="video/mp4">
+        </video>
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+        </div>
+      </div>
+      <div>
         <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
           Живой огонь
         </p>
@@ -678,36 +680,37 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       </div>
 
       <!-- 2. ТЕКСТ (слева) + ВИДЕО УСАДЬБЫ (справа) -->
-<div>
-  <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
-    Вечерняя усадьба
-  </p>
-  <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
-    Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать.
-  </p>
-</div>
-<div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:start;">
-  <video loop muted playsinline poster="images/территория.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-    <source src="images/территория.mp4" type="video/mp4">
-  </video>
-  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-      <polygon points="5,3 19,12 5,21" />
-    </svg>
-  </div>
-</div>
+      <div>
+        <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
+          Вечерняя усадьба
+        </p>
+        <p style="font-family:var(--sans);font-size:1rem;color:#78716c;font-weight:300;line-height:1.8;margin:0;">
+          Закат, горы и уютный свет домиков. Здесь хочется остановиться и просто дышать.
+        </p>
+      </div>
+      <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:start;">
+        <video loop muted playsinline poster="images/территория.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+          <source src="images/территория.mp4" type="video/mp4">
+        </video>
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+        </div>
+      </div>
 
       <!-- 3. ВИДЕО БАССЕЙНА (слева) + ТЕКСТ (справа) -->
       <div class="video-container" style="cursor:pointer;border-radius:1.5rem;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06);background:#f0efeb;position:relative;max-width:480px;justify-self:end;">
-  <video loop muted playsinline poster="images/бассейн.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
-    <source src="images/бассейн.mp4" type="video/mp4">
-  </video>
-  <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
-    <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
-      <polygon points="5,3 19,12 5,21" />
-    </svg>
-  </div>
-</div>
+        <video loop muted playsinline poster="images/бассейн.jpg" style="width:100%;display:block;aspect-ratio:1/1;object-fit:cover;">
+          <source src="images/бассейн.mp4" type="video/mp4">
+        </video>
+        <div class="play-btn" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:opacity 0.3s;">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="white" style="filter:drop-shadow(0 2px 20px rgba(0,0,0,0.3));">
+            <polygon points="5,3 19,12 5,21" />
+          </svg>
+        </div>
+      </div>
+      <div>
         <p style="font-family:var(--serif);font-size:2rem;color:#292524;margin:0 0 0.5rem 0;letter-spacing:-0.02em;">
           Вечерний бассейн
         </p>
@@ -717,10 +720,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       </div>
 
     </div>
-
   </div>
-
-</div>
 <section class="booking" id="booking">
   <div class="sec-inner-wide">
     <div class="booking-header">
