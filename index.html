@@ -376,7 +376,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
 .modal-box{background:var(--cream);border-radius:2rem;overflow:hidden;border:1px solid #e7e5e4;z-index:101;width:100%;max-width:52rem;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.25);margin:2rem auto}
 .modal-close{position:absolute;top:1rem;right:1rem;width:2.5rem;height:2.5rem;border-radius:50%;background:rgba(28,25,23,.5);color:#fff;border:none;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s;font-size:1rem}
 .modal-close:hover{background:#1c1917}
-.modal-cover{height:14rem;position:relative}
+.modal-cover{height:20rem;position:relative}
 .modal-cover img{width:100%;height:100%;object-fit:cover}
 .modal-cover-grad{position:absolute;inset:0;background:linear-gradient(to top,#1c1917,transparent)}
 .modal-cover-title{position:absolute;bottom:1.5rem;left:1.5rem;font-family:var(--serif);font-size:1.75rem;color:#fff}
@@ -445,10 +445,10 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
   .hero-loc{left:1.5rem;top:5.5rem}
   .sec-header-row{flex-direction:column;align-items:flex-start;gap:1.5rem}
   .sec-header-row .left h2{font-size:2.5rem}
-  .scen-card{min-width:290px;max-width:290px}
-  .scen-img{height:240px}
+  .scen-card{min-width:340px;max-width:340px}
+  .scen-img{height:280px}
   .svc-grid{grid-template-columns:1fr}
-  .rev-card{min-width:290px;max-width:100%}
+  .rev-card{min-width:320px;max-width:100%}
   .care-grid{grid-template-columns:1fr}
   .plaques{grid-template-columns:1fr}
   .cabin-btns{grid-template-columns:1fr}
@@ -591,7 +591,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
       <div class="silence-icon">⚠</div>
       <div class="silence-text">
         <h3>Тишина и покой</h3>
-        <p>Громкая музыка и шумные вечеринки у нас категорически запрещены. Мы оберегаем спокойный отдых каждого нашего гостя.</p>
+        <p>Громкая музыка и шумные вечеринки у нас запрещены. Мы оберегаем спокойный отдых каждого нашего гостя.</p>
       </div>
     </div>
   </div>
@@ -601,7 +601,7 @@ footer{background:var(--sand);color:#78716c;font-size:.75rem;padding:4rem 1.5rem
   <div class="founder-inner">
     <h2>Манифест <br><em>основателя</em></h2>
     <div class="founder-text">
-      <p>«Это место родилось из простого желания - дать своей семье тишину, уединение и возможность спокойно проводить время вместе. А потом я понял: это нужно не только моей семье.</p>
+      <p>Это место родилось из простого желания - дать своей семье тишину, уединение и возможность спокойно проводить время вместе. А потом я понял: это нужно не только моей семье.</p>
       <p>Многое здесь сделано вручную - детали, которые вы обязательно заметите при заезде, я придумал и смастерил сам. Так я хотел передать тепло, которое нельзя купить, его можно только ощутить, находясь здесь.</p>
       <p>Мне хотелось, чтобы здесь сочетались уединение на природе и комфорт, к которому вы привыкли.</p>
       <p>Мне важно, чтобы вы уехали отдохнувшими и с новыми силами. Репутация для меня - это когда люди советуют это место своим близким.
@@ -1117,7 +1117,7 @@ function closeM(id){
 // RENDER SCENARIOS
 const ss=document.getElementById('ss');
 scenarios.forEach(s=>{
-  ss.innerHTML+=`<div class="scen-card"><div class="scen-img"><div class="scen-img-ov"></div><img src="${s.image}" alt="${s.title}" loading="lazy" style="filter:brightness(0.95) saturate(0.9);"><span class="scen-num">0${s.id}</span></div><div class="scen-body"><h3>${s.title}</h3><p>${s.description}</p></div></div>`;
+  ss.innerHTML+=`<div class="scen-card"><div class="scen-img"><div class="scen-img-ov"></div><img src="${s.image}" alt="${s.title}" loading="lazy" style="filter:brightness(0.98) saturate(0.95);"><span class="scen-num">0${s.id}</span></div><div class="scen-body"><h3>${s.title}</h3><p>${s.description}</p></div></div>`;
 });
 
 // RENDER SERVICES
