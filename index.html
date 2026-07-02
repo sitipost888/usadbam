@@ -1118,7 +1118,7 @@ function closeM(id){
 // RENDER SCENARIOS
 const ss=document.getElementById('ss');
 scenarios.forEach(s=>{
-  ss.innerHTML+=`<div class="scen-card"><div class="scen-img"><div class="scen-img-ov"></div><img src="${s.image}" alt="${s.title}" loading="lazy"><span class="scen-num">0${s.id}</span></div><div class="scen-body"><h3>${s.title}</h3><p>${s.description}</p></div></div>`;
+  ss.innerHTML+=`<div class="scen-card"><div class="scen-img"><div class="scen-img-ov"></div><img src="${s.image}" alt="${s.title}" loading="lazy" style="filter:brightness(0.88) saturate(0.7) contrast(0.95);"><span class="scen-num">0${s.id}</span></div><div class="scen-body"><h3>${s.title}</h3><p>${s.description}</p></div></div>`;
 });
 
 // RENDER SERVICES
